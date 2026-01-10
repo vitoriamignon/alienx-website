@@ -1,18 +1,15 @@
-import type { ReactNode } from "react"
-import { Header } from "../components/Header"
+import type { ReactNode } from "react";
+import Header from "../components/Header";
 
-interface Props {
-  children: ReactNode
+interface MainLayoutProps {
+  children: ReactNode;
 }
 
-export function MainLayout({ children }: Props) {
+export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="min-h-screen bg-background text-textPrimary">
-      <Header />
-
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {children}
-      </main>
+    <Header />
+      <main>{children}</main>
     </div>
-  )
+  );
 }
