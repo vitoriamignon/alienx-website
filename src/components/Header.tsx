@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 import logoAlienx from "../assets/logo-alienx.png";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   return (
-    <header className="w-full bg-black border-b border-white/10">
+    <header className="w-full bg-background border-b border-white/10">
       <div className="relative flex items-center h-16 px-4 gap-6">
 
         {/* MENU HAMBÚRGUER — MOBILE */}
@@ -18,24 +20,27 @@ export default function Header() {
         </button>
 
         {/* MENU DESKTOP — ESQUERDA */}
-        <nav className="hidden md:flex items-center gap-6 text-white text-sm w-full">
-          <a href="#sobre" className="hover:text-green-400 transition">
-            Sobre
+        <nav className="hidden md:flex items-center gap-6 text-textPrimary text-sm w-full">
+          <a href="#sobre" className="hover:text-accent-green transition">
+            {t.nav.about}
           </a>
-          <a href="#jogos" className="hover:text-green-400 transition">
-            Jogos
+          <a href="#jogos" className="hover:text-accent-green transition">
+            {t.nav.games}
           </a>
-          <a href="#presskit" className="hover:text-green-400 transition">
-            Presskit
+          <a href="#presskit" className="hover:text-accent-green transition">
+            {t.nav.presskit}
           </a>
-          <a href="#contato" className="hover:text-green-400 transition">
-            Contato
+          <a href="#contato" className="hover:text-accent-green transition">
+            {t.nav.contact}
           </a>
 
           {/* IDIOMA */}
-         <button className="ml-auto border border-white/30 px-3 py-1 rounded text-xs hover:border-green-400 hover:text-green-400 transition">
-          PT | EN
-        </button>
+         <button
+           onClick={toggleLanguage}
+           className="ml-auto border border-white/30 px-3 py-1 rounded text-xs hover:border-accent-green hover:text-accent-green transition"
+         >
+           {language === 'pt' ? 'EN' : 'PT'}
+         </button>
         </nav>
 
         {/* LOGO — SEMPRE CENTRALIZADA */}
@@ -48,14 +53,17 @@ export default function Header() {
 
       {/* MENU MOBILE */}
       {open && (
-        <nav className="md:hidden flex flex-col gap-4 px-6 py-4 text-white bg-black border-t border-white/10">
-          <a onClick={() => setOpen(false)} href="#sobre">Sobre</a>
-          <a onClick={() => setOpen(false)} href="#jogos">Jogos</a>
-          <a onClick={() => setOpen(false)} href="#presskit">Presskit</a>
-          <a onClick={() => setOpen(false)} href="#contato">Contato</a>
+        <nav className="md:hidden flex flex-col gap-4 px-6 py-4 text-textPrimary bg-background border-t border-white/10">
+          <a onClick={() => setOpen(false)} href="#sobre" className="hover:text-accent-green transition">{t.nav.about}</a>
+          <a onClick={() => setOpen(false)} href="#jogos" className="hover:text-accent-green transition">{t.nav.games}</a>
+          <a onClick={() => setOpen(false)} href="#presskit" className="hover:text-accent-green transition">{t.nav.presskit}</a>
+          <a onClick={() => setOpen(false)} href="#contato" className="hover:text-accent-green transition">{t.nav.contact}</a>
 
-          <button className="mt-4 border border-white/30 px-3 py-1 rounded text-xs w-fit">
-            PT | EN
+          <button
+            onClick={() => { toggleLanguage(); setOpen(false); }}
+            className="mt-4 border border-white/30 px-3 py-1 rounded text-xs w-fit hover:border-accent-green hover:text-accent-green transition"
+          >
+            {language === 'pt' ? 'EN' : 'PT'}
           </button>
         </nav>
       )}

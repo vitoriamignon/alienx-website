@@ -1,11 +1,14 @@
-import  MainLayout  from "./layouts/MainLayout";
+import MainLayout from "./layouts/MainLayout";
+import { Home } from "./pages/Home";
+import { LanguageProvider } from "./contexts/LanguageContext";
+
 function App() {
   return (
-    <MainLayout>
-      <h1 className="mt-10 text-center text-3xl">
-        Teste Header
-      </h1>
-    </MainLayout>
+    <LanguageProvider>
+      <MainLayout>
+        <Home />
+      </MainLayout>
+    </LanguageProvider>
   );
 }
 

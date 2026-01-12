@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "title": "AlienX Game Studio é um pequeno estúdio criando experiências para o mundo"
+  },
+  "home": {
+    "gamesSection": {
+      "title": "NOSSOS",
+      "titleHighlight": "JOGOS",
+      "subtitle": "Mundos únicos criados com paixão e inovação. Cada jogo é uma jornada diferente, uma experiência que desafia e encanta."
+    },
+    "aboutSection": {
+      "title": "SOBRE A",
+      "titleHighlight": "ALIENX",
+      "paragraphs": [
+        "A AlienX nasceu da paixão por contar histórias através do meio digital. Somos um estúdio independente dedicado a criar experiências de jogo que transcendem o entretenimento comum.",
+        "Cada projeto é desenvolvido com atenção meticulosa aos detalhes, combinando narrativa profunda, mecânicas inovadoras e arte que transporta jogadores para mundos extraordinários.",
+        "Acreditamos que os jogos têm o poder de emocionar, ensinar e conectar pessoas de maneiras únicas. Nossa missão é criar títulos que deixem uma marca duradoura na memória de quem joga."
+      ],
+      "button": "SAIBA MAIS SOBRE NÓS"
+    }
+  },
+  "footer": {
+    "description": "Estúdio independente dedicado a criar experiências de jogo únicas e memoráveis. Mundos digitais que desafiam e encantam.",
+    "games": "JOGOS",
+    "seeAll": "Ver Todos",
+    "company": "EMPRESA",
+    "aboutUs": "Sobre Nós",
+    "careers": "Carreiras",
+    "pressKit": "Press Kit",
+    "contact": "Contato",
+    "copyright": "© 2024 AlienX. Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  },
+  "gameCard": {
+    "released": "LANÇADO",
+    "inDevelopment": "EM DESENVOLVIMENTO",
+    "comingSoon": "EM BREVE",
+    "releasedIn": "Lançado em"
+  },
+  "games": {
+    "cosmicVoid": {
+      "description": "Uma jornada épica através do vazio cósmico, onde cada decisão molda o destino da galáxia."
+    },
+    "neuralShadows": {
+      "description": "Mergulhe na mente coletiva em um thriller cyberpunk onde realidade e ilusão se confundem."
+    },
+    "echoesOfEternity": {
+      "description": "Explore ruínas antigas e desvende mistérios que ecoam através do tempo."
+    }
+  },
+  "nav": {
+    "about": "Sobre",
+    "games": "Jogos",
+    "presskit": "Presskit",
+    "contact": "Contato"
+  }
+}

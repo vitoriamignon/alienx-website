@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "title": "AlienX Game Studio is a small studio creating experiences for the world"
+  },
+  "home": {
+    "gamesSection": {
+      "title": "OUR",
+      "titleHighlight": "GAMES",
+      "subtitle": "Unique worlds created with passion and innovation. Each game is a different journey, an experience that challenges and enchants."
+    },
+    "aboutSection": {
+      "title": "ABOUT",
+      "titleHighlight": "ALIENX",
+      "paragraphs": [
+        "AlienX was born from the passion for storytelling through digital media. We are an independent studio dedicated to creating gaming experiences that transcend common entertainment.",
+        "Each project is developed with meticulous attention to detail, combining deep narrative, innovative mechanics, and art that transports players to extraordinary worlds.",
+        "We believe games have the power to move, teach, and connect people in unique ways. Our mission is to create titles that leave a lasting mark on the memory of those who play."
+      ],
+      "button": "LEARN MORE ABOUT US"
+    }
+  },
+  "footer": {
+    "description": "Independent studio dedicated to creating unique and memorable gaming experiences. Digital worlds that challenge and enchant.",
+    "games": "GAMES",
+    "seeAll": "See All",
+    "company": "COMPANY",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "pressKit": "Press Kit",
+    "contact": "Contact",
+    "copyright": "© 2024 AlienX. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "gameCard": {
+    "released": "RELEASED",
+    "inDevelopment": "IN DEVELOPMENT",
+    "comingSoon": "COMING SOON",
+    "releasedIn": "Released in"
+  },
+  "games": {
+    "cosmicVoid": {
+      "description": "An epic journey through the cosmic void, where each decision shapes the galaxy's destiny."
+    },
+    "neuralShadows": {
+      "description": "Dive into the collective mind in a cyberpunk thriller where reality and illusion blur."
+    },
+    "echoesOfEternity": {
+      "description": "Explore ancient ruins and unravel mysteries that echo through time."
+    }
+  },
+  "nav": {
+    "about": "About",
+    "games": "Games",
+    "presskit": "Presskit",
+    "contact": "Contact"
+  }
+}

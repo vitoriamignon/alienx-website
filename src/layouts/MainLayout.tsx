@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -8,8 +9,9 @@ interface MainLayoutProps {
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div className="min-h-screen bg-background text-textPrimary">
-    <Header />
+      <Header />
       <main>{children}</main>
+      <Footer />
     </div>
   );
 }
