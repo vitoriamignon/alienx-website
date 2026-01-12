@@ -1,16 +1,20 @@
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from "../contexts/LanguageContext";
+import { HyperText } from "@/components/HyperText";
 
 export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image - Full Bleed with Light Bloom */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat filter brightness-110 contrast-105"
         style={{
           backgroundImage: `url('/assets/hero-bg.jpg')`,
-          filter: 'brightness(1.1) contrast(1.05) saturate(1.1)'
+          filter: "brightness(1.1) contrast(1.05) saturate(1.1)",
         }}
       />
 
@@ -28,9 +32,17 @@ export default function HeroSection() {
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Main Text */}
         <div className="animate-slide-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-textPrimary leading-tight mb-8 drop-shadow-lg">
-            {t.hero.title}
-          </h1>
+          {/* <h1 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-textPrimary leading-tight mb-8 drop-shadow-lg"> */}
+            {/* {t.hero.title} */}
+            <HyperText
+              duration={1000}
+              animateOnHover={false}
+              startOnView={true}
+              className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-textPrimary leading-tight mb-8 drop-shadow-lg"
+            >
+              {t.hero.title}
+            </HyperText>
+          {/* </h1> */}
         </div>
 
         {/* Subtle accent line */}
