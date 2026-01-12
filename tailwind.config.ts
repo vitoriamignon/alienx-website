@@ -18,7 +18,7 @@ export default {
         },
       },
       fontFamily:{
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Poppins", "system-ui", "sans-serif"],
         serif: ["Playfair Display", "serif"],
         poppins: ["Poppins", "sans-serif"],
       },

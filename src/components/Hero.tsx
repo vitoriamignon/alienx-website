@@ -28,7 +28,7 @@ export default function HeroSection() {
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Main Text */}
         <div className="animate-slide-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-textPrimary leading-tight mb-8 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-textPrimary leading-tight mb-8 drop-shadow-lg">
             {t.hero.title}
           </h1>
         </div>

@@ -65,7 +65,7 @@ export default function GameCard({ game }: GameCardProps) {
           </div>
 
           {/* Title */}
-          <h3 className="text-3xl font-serif font-bold text-textPrimary mb-3 group-hover:text-accent-green transition-colors duration-300">
+          <h3 className="text-3xl font-poppins font-bold text-textPrimary mb-3 group-hover:text-accent-green transition-colors duration-300">
             {game.title}
           </h3>
 
@@ -117,7 +117,7 @@ export default function GameCard({ game }: GameCardProps) {
           </div>
 
           {/* Title */}
-          <h3 className="text-2xl font-serif font-bold text-textPrimary mb-3 group-hover:text-accent-green transition-colors duration-300">
+          <h3 className="text-2xl font-poppins font-bold text-textPrimary mb-3 group-hover:text-accent-green transition-colors duration-300">
             {game.title}
           </h3>
 
