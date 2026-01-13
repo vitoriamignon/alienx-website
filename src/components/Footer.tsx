@@ -1,4 +1,5 @@
 import { useLanguage } from "../contexts/LanguageContext";
+import logoAlienx from "../assets/logo-alienx.png";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -10,7 +11,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <img
-              src="/assets/logo-alienx.png"
+              src={logoAlienx}
               alt="AlienX"
               className="h-12 mb-4"
             />
