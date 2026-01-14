@@ -2,6 +2,7 @@ import HeroSection from '../components/Hero';
 import GameCard from '../components/GameCard';
 import { games } from '../data/games';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Link } from "react-router-dom";
 
 export function Home() {
   const { t } = useLanguage();
@@ -11,7 +12,7 @@ export function Home() {
       <HeroSection />
 
       {/* Games Section */}
-      <section className="py-20 px-6 bg-surface">
+      <section id="jogos" className="py-20 px-6 bg-surface">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-poppins font-bold text-textPrimary mb-6 tracking-wide">
@@ -51,12 +52,17 @@ export function Home() {
           </div>
 
           <div className="mt-12">
-            <button className="px-6 py-3 border border-textSecondary text-textSecondary hover:border-accent-green hover:text-accent-green transition-colors duration-300 rounded-lg">
+            <Link 
+              to="/about"
+              className="px-6 py-3 border border-textSecondary text-textSecondary hover:border-accent-green hover:text-accent-green transition-colors duration-300 rounded-lg inline-block"
+            >
               {t.home.aboutSection.button}
-            </button>
+            </Link>
           </div>
         </div>
       </section>
+      
+      <div id="contato"></div>
     </div>
   );
 }

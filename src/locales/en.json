@@ -72,5 +72,26 @@
     "games": "Games",
     "presskit": "Presskit",
     "contact": "Contact"
+  },
+"aboutPage": {
+    "hero": {
+      "title": "CREATING IMMERSIVE EXPERIENCES",
+      "subtitle": "A studio founded by gamers, for gamers."
+    },
+    "history": {
+      "originTitle": "WHO WE ARE",
+      "originText": "AlienX is a development studio founded by game development graduates, players, and artists. We believe in cross-platform play: we want everyone to play together, regardless of their chosen platform.",
+      "trajectoryTitle": "OUR HISTORY",
+      "trajectoryText": "Based in Rio de Janeiro and founded on December 28, 2016, our mission is clear: to provide the best possible experience in immersive games, creating charismatic characters and engaging gameplay."
+    },
+    "team": {
+      "title": "OUR TEAM",
+      "roles": {
+        "founder": "Founder & Developer",
+        "leadDev": "Tech Lead",
+        "artist": "Concept Artist",
+        "designer": "Game Designer"
+      }
+    }
   }
 }

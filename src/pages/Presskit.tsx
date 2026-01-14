@@ -1,7 +1,7 @@
-export function Presskit(){
-    return(
-        <div>
-        Presskit
-        </div>
-    )
+export default function Presskit() {
+  return (
+    <div>
+      Presskit
+    </div>
+  );
 }
