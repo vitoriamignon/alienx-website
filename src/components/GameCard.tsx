@@ -1,12 +1,28 @@
+import { useState, useEffect } from 'react';
 import type { Game } from '../data/games';
+import { games } from '../data/games';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface GameCardProps {
-  game: Game;
+  gameId: string;
 }
 
-export default function GameCard({ game }: GameCardProps) {
+export default function GameCard({ gameId }: GameCardProps) {
   const { t } = useLanguage();
+  const [game, setGame] = useState<Game | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchGame = async () => {
+      // Mock API call
+      const foundGame = games.find(g => g.id === gameId);
+      // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 100));
+      setGame(foundGame || null);
+      setLoading(false);
+    };
+    fetchGame();
+  }, [gameId]);
 
   const getGameKey = (id: string) => {
     const mapping: { [key: string]: string } = {
@@ -49,15 +65,47 @@ export default function GameCard({ game }: GameCardProps) {
     }
   };
 
+  if (loading || !game) {
+    return (
+      <div className="group bg-surface rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-white/10 hover:border-accent-green/50 animate-pulse">
+        <div className="hidden md:flex">
+          <div className="w-[510px] h-[270px] bg-gray-700"></div>
+          <div className="flex-1 p-8 space-y-4">
+            <div className="h-6 bg-gray-700 rounded w-1/4"></div>
+            <div className="h-8 bg-gray-700 rounded w-3/4"></div>
+            <div className="h-4 bg-gray-700 rounded w-full"></div>
+            <div className="flex gap-2">
+              <div className="h-6 bg-gray-700 rounded w-16"></div>
+              <div className="h-6 bg-gray-700 rounded w-16"></div>
+            </div>
+          </div>
+        </div>
+        <div className="md:hidden">
+          <div className="w-[510px] h-[270px] bg-gray-700"></div>
+          <div className="p-6 space-y-3">
+            <div className="h-5 bg-gray-700 rounded w-1/3"></div>
+            <div className="h-6 bg-gray-700 rounded w-2/3"></div>
+            <div className="h-4 bg-gray-700 rounded w-full"></div>
+            <div className="flex gap-2">
+              <div className="h-5 bg-gray-700 rounded w-12"></div>
+              <div className="h-5 bg-gray-700 rounded w-12"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="group bg-surface rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-white/10 hover:border-accent-green/50">
       {/* Desktop: Horizontal Layout */}
       <div className="hidden md:flex">
         {/* Image Section */}
-        <div className="relative w-2/5">
-          <div
-            className="aspect-[4/3] bg-cover bg-center"
-            style={{ backgroundImage: `url(${game.image})` }}
+        <div className="relative w-[510px] h-[270px]">
+          <img
+            src={game.image}
+            alt={game.title}
+            className="w-[510px] h-[270px] object-fill "
           />
           {/* Subtle Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
@@ -66,7 +114,11 @@ export default function GameCard({ game }: GameCardProps) {
         {/* Content Section */}
         <div className="flex-1 p-8 flex flex-col justify-center">
           {/* Status Badge */}
-          <div className={`self-start px-4 py-2 rounded text-sm font-bold mb-4 ${getStatusColor(game.status)}`}>
+          <div
+            className={`self-start px-4 py-2 rounded text-sm font-bold mb-4 ${getStatusColor(
+              game.status
+            )}`}
+          >
             {getStatusText(game.status)}
           </div>
 
@@ -106,10 +158,11 @@ export default function GameCard({ game }: GameCardProps) {
       {/* Mobile: Vertical Layout */}
       <div className="md:hidden">
         {/* Image Section */}
-        <div className="relative">
-          <div
-            className="aspect-video bg-cover bg-center"
-            style={{ backgroundImage: `url(${game.image})` }}
+        <div className="relative w-[510px] h-[270px]">
+          <img
+            src={game.image}
+            alt={game.title}
+            className="w-[510px] h-[270px] object-cover"
           />
           {/* Overlay for mobile */}
           <div className="absolute inset-0 bg-black/40" />
@@ -118,7 +171,11 @@ export default function GameCard({ game }: GameCardProps) {
         {/* Content Section */}
         <div className="p-6">
           {/* Status Badge */}
-          <div className={`inline-block px-3 py-1 rounded text-xs font-bold mb-3 ${getStatusColor(game.status)}`}>
+          <div
+            className={`inline-block px-3 py-1 rounded text-xs font-bold mb-3 ${getStatusColor(
+              game.status
+            )}`}
+          >
             {getStatusText(game.status)}
           </div>
 

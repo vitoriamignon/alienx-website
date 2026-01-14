@@ -24,7 +24,7 @@ export function Home() {
 
           <div className="space-y-8">
             {games.map((game) => (
-              <GameCard key={game.id} game={game} />
+              <GameCard key={game.id} gameId={game.id} />
             ))}
           </div>
         </div>
