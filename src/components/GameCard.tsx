@@ -10,6 +10,12 @@ export default function GameCard({ game }: GameCardProps) {
 
   const getGameKey = (id: string) => {
     const mapping: { [key: string]: string } = {
+      'star-bind': 'starBind',
+      'vapor-stories': 'vaporStories',
+      'cell-wars': 'cellWars',
+      'eco-city-planner': 'ecoCityPlanner',
+      'hero-vs-1000': 'heroVs1000',
+      'office-hero': 'officeHero',
       'cosmic-void': 'cosmicVoid',
       'neural-shadows': 'neuralShadows',
       'echoes-of-eternity': 'echoesOfEternity'
@@ -71,7 +77,7 @@ export default function GameCard({ game }: GameCardProps) {
 
           {/* Description */}
           <p className="text-textSecondary text-base leading-relaxed mb-6 flex-grow">
-            {t.games[getGameKey(game.id) as keyof typeof t.games]?.description || game.description}
+            {t.games[getGameKey(game.id) as keyof typeof t.games]?.description}
           </p>
 
           {/* Platforms and Actions */}
@@ -123,7 +129,7 @@ export default function GameCard({ game }: GameCardProps) {
 
           {/* Description */}
           <p className="text-textSecondary text-sm leading-relaxed mb-4">
-            {t.games[getGameKey(game.id) as keyof typeof t.games]?.description || game.description}
+            {t.games[getGameKey(game.id) as keyof typeof t.games]?.description}
           </p>
 
           {/* Platforms */}

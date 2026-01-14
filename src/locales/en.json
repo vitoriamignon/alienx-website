@@ -39,6 +39,24 @@
     "releasedIn": "Released in"
   },
   "games": {
+    "starBind": {
+      "description": "A stellar adventure where you connect stars to save the galaxy on an epic journey."
+    },
+    "vaporStories": {
+      "description": "Engaging stories in a world of steam and mystery, exploring deep narratives."
+    },
+    "cellWars": {
+      "description": "Epic battles in a cellular universe, where cells fight for supremacy."
+    },
+    "ecoCityPlanner": {
+      "description": "Plan and build eco-friendly cities in a sustainable future."
+    },
+    "heroVs1000": {
+      "description": "Face enemy hordes in epic battles against a thousand adversaries."
+    },
+    "officeHero": {
+      "description": "Survive the challenges of the corporate world in an office adventure."
+    },
     "cosmicVoid": {
       "description": "An epic journey through the cosmic void, where each decision shapes the galaxy's destiny."
     },
