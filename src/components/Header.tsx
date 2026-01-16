@@ -41,9 +41,9 @@ export default function Header() {
           </Link>
 
           {/* Link para a Seção CONTATO (Âncora na Home com / na frente) */}
-          <a href="/#contato" className={navLinkClass}>
-            {t.nav.contact}
-          </a>
+          <Link to="/contact" className={navLinkClass}>
+                {t.nav.contact}
+              </Link>
 
           {/* IDIOMA - Botão com borda brilhante */}
           <button

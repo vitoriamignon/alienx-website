@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import About from "./pages/About";
 import Presskit from "./pages/Presskit";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -31,7 +32,15 @@ function App() {
                 <Presskit />
               </MainLayout>
             } 
-          />       
+          />  
+          <Route
+            path="/contact"
+            element={
+              <MainLayout>
+                <Contact />
+              </MainLayout>
+            }
+          />     
         </Routes>
       </BrowserRouter>
     </LanguageProvider>
