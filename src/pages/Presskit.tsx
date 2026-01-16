@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { games } from "../data/games";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -19,22 +20,19 @@ export default function Presskit() {
 
   const actionsRow =
     "mt-auto flex flex-col gap-2 md:flex-row md:items-center md:gap-3";
-    
   const imageAspect = "aspect-[4/3] md:aspect-[16/9]";
-  const gameDescriptions: Record<string, string> = {
-    "cell-wars":
-      "Jogo de estratégia focado na sobrevivência e evolução microbiana, onde o jogador deve adaptar seu organismo para dominar o ambiente microscópico.",
-    "office-hero":
-      "Um título do género roguelite com temática de escritório, transformando o ambiente corporativo em um campo de batalha estratégico e divertido.",
-    "hero-vs-1000":
-      "Jogo de sobrevivência e ação de horda, onde o jogador enfrenta vagas massivas de inimigos em combates intensos que testam a habilidade e os reflexos.",
-    "star-bind":
-      "Um roguelite de ação frenética com foco em progressão dinâmica e exploração, trazendo mecânicas de combate fluidas.",
-    "eco-city-planner":
-      "Simulador estratégico de planeamento urbano sustentável, focado na gestão de recursos e na criação de cidades resilientes.",
-    "vapor-stories":
-      "Projeto experimental focado em narrativa e estética visual, expandindo os horizontes criativos do estúdio.",
-  };
+
+  const gameTranslationKey = {
+    "cell-wars": "cellWars",
+    "office-hero": "officeHero",
+    "hero-vs-1000": "heroVs1000",
+    "star-bind": "starBind",
+    "eco-city-planner": "ecoCityPlanner",
+    "vapor-stories": "vaporStories",
+    "cosmic-void": "cosmicVoid",
+    "neural-shadows": "neuralShadows",
+    "echoes-of-eternity": "echoesOfEternity",
+  } as const;
 
   return (
     <div className="pt-28 md:pt-32 pb-16 md:pb-20 px-4 md:px-12">
@@ -66,56 +64,50 @@ export default function Presskit() {
             <div className={actionsRow}>
               <Link
                 to="/about"
-                className={`${ctaClasses} bg-accent-green text-black hover:bg-accent-green/80 w-full md:w-auto`}
+                className={`${ctaClasses} bg-accent-green text-black hover:bg-accent-green/80 w-full md:w-90`}
               >
                 {t.presskit.viewDetails}
               </Link>
-
-              <a
-                href={logoAlienx}
-                download="alienx-logo.png"
-                className={`${ctaClasses} bg-transparent text-accent-green border border-accent-green hover:bg-accent-green/10 w-full md:w-auto`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Baixar logo AlienX Game Studio (PNG)"
-                title="Baixar logo (PNG)"
-              >
-                {t.presskit.downloadLogo}
-              </a>
             </div>
           </div>
-
           {/* Game Cards */}
-          {games.map((game) => (
-            <div key={game.id} className={cardBase}>
-              <div className={`${imageAspect} w-full mb-4`}>
-                <img
-                  src={game.image}
-                  alt={game.title}
-                  className="w-full h-full object-cover rounded"
-                  loading="lazy"
-                />
+          {games.map((game) => {
+
+            const translationKey =
+              gameTranslationKey[game.id as keyof typeof gameTranslationKey];
+
+            return (
+              <div key={game.id} className={cardBase}>
+                <div className={`${imageAspect} w-full mb-4`}>
+                  <img
+                    src={game.image}
+                    alt={game.title}
+                    className="w-full h-full object-cover rounded"
+                    loading="lazy"
+                  />
+                </div>
+
+                <h2 className="text-xl font-bold text-textPrimary mb-2 break-words">
+                  {game.title}
+                </h2>
+
+                <p className="text-sm text-textSecondary mb-6 leading-relaxed">
+                  {t.games?.[translationKey as keyof typeof t.games]?.description ??
+                    // fallback de segurança caso não haja tradução
+                    ""}
+                </p>
+
+                <Link
+                  to={`/games/${game.id}`}
+                  className={`${ctaClasses} bg-accent-green text-black hover:bg-accent-green/80 w-full md:w-auto mt-auto`}
+                >
+                  {t.presskit.viewDetails}
+                </Link>
               </div>
-
-              <h2 className="text-xl font-bold text-textPrimary mb-2 break-words">
-                {game.title}
-              </h2>
-
-              <p className="text-sm text-textSecondary mb-6 leading-relaxed">
-                {gameDescriptions[game.id]}
-              </p>
-
-              <Link
-                to={`/games/${game.id}`}
-                className={`${ctaClasses} bg-accent-green text-black hover:bg-accent-green/80 w-full md:w-auto mt-auto`}
-              >
-                {t.presskit.viewDetails}
-              </Link>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
   );
 }
-
