@@ -73,7 +73,14 @@
     "presskit": "Presskit",
     "contact": "Contact"
   },
-"aboutPage": {
+  "presskit": {
+    "title": "Press Kit",
+    "company": "Company",
+    "viewDetails": "View Details",
+    "companyDescription": "AlienX is an independent development studio from Rio de Janeiro focused on transforming complex programming concepts into intuitive visual experiences and engaging games.",
+    "downloadLogo": "Download the Logo"
+  },
+  "aboutPage": {
     "hero": {
       "title": "CREATING IMMERSIVE EXPERIENCES",
       "subtitle": "A studio founded by gamers, for gamers."
@@ -92,6 +99,11 @@
         "artist": "Concept Artist",
         "designer": "Game Designer"
       }
+    },
+    "presskit": {
+      "title": "Press Kit",
+      "company": "Company",
+      "viewDetails": "View Details"
     }
   }
 }

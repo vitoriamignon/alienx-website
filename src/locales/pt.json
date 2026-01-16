@@ -40,31 +40,40 @@
   },
   "games": {
     "starBind": {
-      "description": "Uma aventura estelar onde você conecta estrelas para salvar a galáxia em uma jornada épica."
+      "description": "Uma aventura estelar onde você conecta estrelas para salvar a galáxia em uma jornada épica.",
+      "tagline": "Conecte as estrelas!"
     },
     "vaporStories": {
-      "description": "Histórias envolventes em um mundo de vapor e mistério, explorando narrativas profundas."
+      "description": "Histórias envolventes em um mundo de vapor e mistério, explorando narrativas profundas.",
+      "tagline": "Mergulhe no vapor e mistério."
     },
     "cellWars": {
-      "description": "Batalhas épicas em um universo celular, onde células lutam por supremacia."
+      "description": "Batalhas épicas em um universo celular, onde células lutam por supremacia.",
+      "tagline": "Batalhe no universo celular."
     },
     "ecoCityPlanner": {
-      "description": "Planeje e construa cidades ecológicas em um futuro sustentável."
+      "description": "Planeje e construa cidades ecológicas em um futuro sustentável.",
+      "tagline": "Construa cidades sustentáveis."
     },
     "heroVs1000": {
-      "description": "Enfrente hordas inimigas em batalhas épicas contra mil adversários."
+      "description": "Enfrente hordas inimigas em batalhas épicas contra mil adversários.",
+      "tagline": "Enfrente mil inimigos."
     },
     "officeHero": {
-      "description": "Sobreviva aos desafios do mundo corporativo em uma aventura de escritório."
+      "description": "Sobreviva aos desafios do mundo corporativo em uma aventura de escritório.",
+      "tagline": "Sobreviva à vida no escritório."
     },
     "cosmicVoid": {
-      "description": "Uma jornada épica através do vazio cósmico, onde cada decisão molda o destino da galáxia."
+      "description": "Uma jornada épica através do vazio cósmico, onde cada decisão molda o destino da galáxia.",
+      "tagline": "Molde o destino da galáxia."
     },
     "neuralShadows": {
-      "description": "Mergulhe na mente coletiva em um thriller cyberpunk onde realidade e ilusão se confundem."
+      "description": "Mergulhe na mente coletiva em um thriller cyberpunk onde realidade e ilusão se confundem.",
+      "tagline": "Confunda realidade e ilusão."
     },
     "echoesOfEternity": {
-      "description": "Explore ruínas antigas e desvende mistérios que ecoam através do tempo."
+      "description": "Explore ruínas antigas e desvende mistérios que ecoam através do tempo.",
+      "tagline": "Desvende mistérios atemporais."
     }
   },
   "nav": {
@@ -73,7 +82,14 @@
     "presskit": "Presskit",
     "contact": "Contato"
   },
-"aboutPage": {
+  "presskit": {
+    "title": "Press Kit",
+    "company": "Empresa",
+    "viewDetails": "Ver Detalhes",
+    "companyDescription": "A AlienX é um estúdio de desenvolvimento independente do Rio de Janeiro focado em transformar conceitos complexos de programação em experiências visuais intuitivas e jogos envolventes.",
+    "downloadLogo": "Baixar Logo"
+  },
+  "aboutPage": {
     "hero": {
       "title": "CRIANDO EXPERIÊNCIAS IMERSIVAS",
       "subtitle": "Um estúdio fundado por jogadores, para jogadores."

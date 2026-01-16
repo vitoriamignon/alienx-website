@@ -1,4 +1,5 @@
 export interface Game {
+  description: ReactNode;
   id: string;
   title: string;
   image: string;
