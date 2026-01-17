@@ -161,5 +161,13 @@
         "designer": "Game Designer"
       }
     }
-  }
+  },
+  "contact": {
+  "title": "Contato",
+  "subtitle": "Entre em contato com a equipe AlienX.",
+  "name": "Nome",
+  "email": "E-mail",
+  "message": "Mensagem",
+  "send": "Enviar"
+}
 }

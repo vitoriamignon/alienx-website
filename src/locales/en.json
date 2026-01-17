@@ -157,5 +157,13 @@
       "company": "Company",
       "viewDetails": "View Details"
     }
-  }
+  },
+      "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with the AlienX team.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+}
 }
