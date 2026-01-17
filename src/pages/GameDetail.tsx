@@ -1,7 +1,405 @@
-export function GameDetail(){
-    return(
-        <div>
-        Game Detail
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { games } from '../data/games';
+import { useLanguage } from '../contexts/LanguageContext';
+
+interface GalleryItem {
+  type: 'image' | 'video';
+  url: string;
+  thumbnail?: string;
+}
+
+interface GameData {
+  id: string;
+  title: string;
+  developer: string;
+  releaseDate: string;
+  platforms: string[];
+  status: 'released' | 'in-development' | 'coming-soon';
+  description: string;
+  longDescription: string;
+  image: string;
+  gallery: GalleryItem[];
+  genre: string;
+}
+
+function getGameData(slug: string): GameData | null {
+  const gameFromData = games.find(game => game.id === slug);
+  if (!gameFromData) return null;
+
+  const gameDetails: Record<string, Omit<GameData, 'id' | 'title' | 'image' | 'status' | 'platforms' | 'releaseDate'>> = {
+    'star-bind': {
+      developer: 'Alien Games Studio',
+      releaseDate: '2023-11-15',
+      genre: 'Ação/Aventura',
+      description: 'Uma aventura espacial épica em um universo aberto',
+      longDescription:
+        'Embarque em uma jornada intergaláctica como um viajante espacial que descobre um antigo segredo cósmico. Explore planetas exóticos, interaja com raças alienígenas e desvende mistérios antigos em uma narrativa rica e imersiva.',
+      gallery: [
+        { type: 'video', url: '/assets/games/star-bind/gallery/video.mp4', thumbnail: '/assets/games/star-bind/gallery/img1.jpg' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img1.jpg' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img2.jpg' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img3.jpg' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img4.jpg' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img5.jpg' },
+      ],
+    },
+'vapor-stories': {
+      developer: 'Alien Games Studio',
+      releaseDate: '2024-03-22',
+      genre: 'Ação/Aventura',
+      description: 'Uma história de mistério e aventura em um mundo steampunk',
+      longDescription: 'Em um mundo onde a tecnologia a vapor e a magia se misturam, siga a jornada de um inventor excêntrico que descobre uma conspiração que pode mudar o destino de sua cidade para sempre.',
+      gallery: [
+        { type: 'video', url: '/assets/games/vapor-stories/gallery/video.mp4', thumbnail: '/assets/games/vapor-stories/gallery/img1.png' },
+        { type: 'image', url: '/assets/games/vapor-stories/gallery/img1.png' },
+        { type: 'image', url: '/assets/games/vapor-stories/gallery/img2.png' },
+        { type: 'image', url: '/assets/games/vapor-stories/gallery/img3.png' },
+        { type: 'image', url: '/assets/games/vapor-stories/gallery/img4.png' }
+      ]
+    },
+    'cell-wars': {
+      developer: 'Alien Games Studio',
+      releaseDate: '2024-06-15',
+      genre: 'Estratégia',
+      description: 'Construa, lute e domine em um mundo microscópico',
+      longDescription: 'Assuma o controle de uma colônia de células em um ambiente hostil. Evolua suas células, desenvolva novas habilidades e lute contra ameaças microscópicas neste jogo de estratégia único.',
+      gallery: [
+        { type: 'video', url: '/assets/games/cell-wars/gallery/video.mp4', thumbnail: '/assets/games/cell-wars/gallery/img1.png' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img1.png' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img2.png' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img3.png' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img4.png' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img5.png' }
+      ]
+    },
+    'eco-city-planner': {
+      developer: 'Alien Games Studio',
+      releaseDate: '2024-01-10',
+      genre: 'Simulação',
+      description: 'Construa a cidade sustentável do futuro',
+      longDescription: 'Projete e gerencie uma cidade ecologicamente correta, equilibrando desenvolvimento urbano e preservação ambiental. Enfrente desafios como mudanças climáticas e crescimento populacional enquanto cria uma metrópole sustentável.',
+      gallery: [
+        { type: 'video', url: '/assets/games/eco-city-planner/gallery/video.mp4', thumbnail: '/assets/games/eco-city-planner/gallery/img1.jpg' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img1.jpg' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img2.jpg' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img3.jpg' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img4.jpg' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img5.jpg' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img6.jpg' }
+      ]
+    },
+    'hero-vs-1000': {
+      developer: 'Alien Games Studio',
+      releaseDate: '2024-09-30',
+      genre: 'Ação',
+      description: 'Um herói contra milhares de inimigos',
+      longDescription: 'Neste jogo de ação frenético, você é um herói que precisa enfrentar ondas de milhares de inimigos. Melhore suas habilidades, desbloqueie equipamentos e sobreviva o máximo que puder!',
+      gallery: [
+        { type: 'video', url: '/assets/games/hero-vs-1000/gallery/video.mp4', thumbnail: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img2.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img3.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img4.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img5.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img6.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img7.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img8.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img9.jpg' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img10.jpg' }
+      ]
+    },
+    'office-hero': {
+      developer: 'Alien Games Studio',
+      releaseDate: '2025-02-15',
+      genre: 'Aventura',
+      description: 'A rotina do escritório nunca foi tão heroica',
+      longDescription: 'Em um mundo onde trabalhar em escritório é uma aventura, você deve navegar pelos desafios do dia a dia corporativo enquanto desvenda mistérios e faz aliados inesperados.',
+      gallery: [
+        { type: 'video', url: '/assets/games/office-hero/gallery/video.mp4', thumbnail: '/assets/games/office-hero/gallery/img1.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img1.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img2.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img3.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img4.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img5.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img6.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img7.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img8.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img9.jpg' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img10.jpg' }
+      ]
+    }
+  };
+
+  const details = gameDetails[slug] || {
+    developer: 'Alien Games Studio',
+    releaseDate: '2024-01-01',
+    genre: 'Ação/Aventura',
+    description: 'Um jogo incrível da Alien Games',
+    longDescription: 'Descrição detalhada do jogo será adicionada em breve.',
+    gallery: [{ type: 'image', url: '/assets/games/StarBindCardImage.png' }],
+  };
+
+  return {
+    ...gameFromData,
+    ...details,
+    releaseDate: gameFromData.releaseDate || details.releaseDate,
+  };
+}
+
+function getStatusColor(status: string) {
+  switch (status) {
+    case 'released':
+      return 'bg-accent-green text-background';
+    case 'in-development':
+      return 'bg-accent-yellow text-background';
+    case 'coming-soon':
+      return 'bg-accent-red text-textPrimary';
+    default:
+      return 'bg-surface text-textPrimary';
+  }
+}
+
+export function GameDetail() {
+  const { slug } = useParams<{ slug: string }>();
+  const { t } = useLanguage();
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [game, setGame] = useState<GameData | null>(null);
+  const [loading, setLoading] = useState(true);
+  
+  // Fallback translations in case they're not defined in the translation files
+  const translations = {
+    status: {
+      released: t.gameDetail?.status?.released || 'Disponível',
+      inDevelopment: t.gameDetail?.status?.inDevelopment || 'Em Desenvolvimento',
+      comingSoon: t.gameDetail?.status?.comingSoon || 'Em Breve'
+    },
+    availableOn: t.gameDetail?.availableOn || 'Disponível em:',
+    releaseDate: t.gameDetail?.releaseDate || 'Lançamento:',
+    aboutGame: t.gameDetail?.aboutGame || 'Sobre o Jogo',
+    developer: t.gameDetail?.developer || 'Desenvolvedor',
+    genre: t.gameDetail?.genre || 'Gênero',
+    platforms: t.gameDetail?.platforms || 'Plataformas',
+    features: {
+      title: t.gameDetail?.features?.title || 'Características Principais',
+      items: t.gameDetail?.features?.items || [
+        'Mundo aberto massivo para explorar com ecossistemas únicos',
+        'Sistema de combate dinâmico e fluido',
+        'História rica com múltiplos finais',
+        'Gráficos de última geração com suporte a ray tracing'
+      ]
+    },
+    requirements: {
+      title: t.gameDetail?.requirements?.title || 'Requisitos do Sistema',
+      minimum: t.gameDetail?.requirements?.minimum || 'Mínimos',
+      recommended: t.gameDetail?.requirements?.recommended || 'Recomendados',
+      system: t.gameDetail?.systemRequirements || {
+        os: 'SO:',
+        processor: 'Processador:',
+        memory: 'Memória:',
+        graphics: 'Placa de vídeo:',
+        storage: 'Armazenamento:',
+        ssdRecommended: '(SSD recomendado)',
+        windows: 'Windows 10/11 64-bit',
+        windowsMin: 'Windows 10 64-bit',
+        processorMin: 'Intel Core i5-6600K / AMD Ryzen 5 1600',
+        processorRec: 'Intel Core i7-9700K / AMD Ryzen 7 3700X',
+        memoryMin: '12 GB de RAM',
+        memoryRec: '16 GB de RAM',
+        graphicsMin: 'NVIDIA GTX 1060 6GB / AMD RX 580 8GB',
+        graphicsRec: 'NVIDIA RTX 2070 / AMD RX 5700 XT',
+        storageMin: '50 GB de espaço disponível',
+        storageRec: '50 GB de espaço disponível'
+      }
+    },
+    navigation: t.gameDetail?.navigation || {
+      previous: 'Anterior',
+      next: 'Próximo',
+      viewImage: 'Ver imagem',
+      viewVideo: 'Ver vídeo'
+    },
+    media: t.gameDetail?.media || 'Mídia',
+    loading: t.loading || 'Carregando...'
+  };
+
+  const formatDate = (dateString: string) => {
+    const options: Intl.DateTimeFormatOptions = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric', 
+      timeZone: 'UTC' 
+    };
+    const language = localStorage.getItem('language') || 'pt';
+    return new Date(dateString).toLocaleDateString(language === 'pt' ? 'pt-BR' : 'en-US', options);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const gameData = getGameData(slug || '');
+      setGame(gameData);
+      setLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [slug]);
+
+  if (loading || !game) {
+    return (
+      <div className="min-h-screen bg-background text-textPrimary flex items-center justify-center">
+        <div className="animate-pulse text-center">
+          <div className="w-16 h-16 border-4 border-accent-green border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-textSecondary">{translations.loading}</p>
         </div>
-    )
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-background text-textPrimary">
+      {/* Hero Section */}
+      <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${game.image})`, filter: 'brightness(0.4)' }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent"></div>
+        </div>
+
+        <div className="container mx-auto px-4 h-full flex items-end pb-16 md:pb-24 relative z-10">
+          <div className="max-w-4xl w-full">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(game.status)}`}>
+                {game.status === 'released'
+                  ? translations.status.released
+                  : game.status === 'in-development'
+                  ? translations.status.inDevelopment
+                  : translations.status.comingSoon}
+              </span>
+              <span className="text-textSecondary">•</span>
+              <span className="text-textSecondary">{game.genre}</span>
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 font-poppins">{game.title}</h1>
+
+            {game.platforms && game.platforms.length > 0 && (
+              <div className="flex flex-wrap gap-4 mt-6">
+                <div className="flex items-center gap-2">
+                  <span className="text-textSecondary">{translations.availableOn}</span>
+                  <div className="flex gap-2">
+                    {game.platforms.map((platform, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-surface text-xs rounded border border-textPrimary/20"
+                      >
+                        {platform}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {game.releaseDate && <div className="mt-4 text-textSecondary">{translations.releaseDate} {formatDate(game.releaseDate)}</div>}
+          </div>
+        </div>
+      </div>
+
+      {/* Conteúdo Principal */}
+      <div className="relative z-10 -mt-16">
+        <div className="container mx-auto px-4">
+          {/* Seção de Descrição */}
+          <section className="bg-surface rounded-lg shadow-lg p-6 mb-8">
+            <h2 className="text-2xl font-bold mb-4">{translations.aboutGame}</h2>
+            <p className="text-textSecondary leading-relaxed">{game.longDescription}</p>
+          </section>
+
+          {/* Seção de Mídia */}
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold mb-6">{translations.media}</h2>
+            
+            {/* Visualização principal da mídia */}
+            <div className="relative w-full h-64 md:h-96 bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4">
+              {game.gallery[selectedImage]?.type === 'video' ? (
+                <video 
+                  src={game.gallery[selectedImage].url} 
+                  className="w-full h-full object-contain" 
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                />
+              ) : (
+                <img 
+                  src={game.gallery[selectedImage]?.url} 
+                  alt={`${translations.navigation.viewImage} ${selectedImage + 1}`}
+                  className="w-full h-full object-contain cursor-pointer"
+                  onClick={() => setSelectedImage(selectedImage)}
+                />
+              )}
+              
+              {/* Navegação entre as mídias */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage(prev => (prev === 0 ? game.gallery.length - 1 : prev - 1));
+                }}
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center text-white transition-colors"
+                aria-label={translations.navigation.previous}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage(prev => (prev === game.gallery.length - 1 ? 0 : prev + 1));
+                }}
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center text-white transition-colors"
+                aria-label={translations.navigation.next}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+              {/* Indicador de posição */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                {selectedImage + 1} / {game.gallery.length}
+              </div>
+            </div>
+            
+            {/* Miniaturas */}
+            <div className="flex space-x-2 md:space-x-3 overflow-x-auto py-2 px-1 -mx-1 scrollbar-hide">
+              {game.gallery.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImage(index)}
+                  className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-md overflow-hidden transition-all duration-200 ${
+                    selectedImage === index
+                      ? 'ring-2 ring-accent-green transform scale-105'
+                      : 'opacity-70 hover:opacity-100 ring-1 ring-textPrimary/20'
+                  }`}
+                  aria-label={`${item.type === 'video' ? translations.navigation.viewVideo : translations.navigation.viewImage} ${index + 1}`}
+                >
+                  <img 
+                    src={item.thumbnail || item.url} 
+                    alt={`${item.type === 'video' ? translations.navigation.viewVideo : translations.navigation.viewImage} ${index + 1}`} 
+                    className="w-full h-full object-cover" 
+                  />
+                  {item.type === 'video' && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  )}
+                </button>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
 }

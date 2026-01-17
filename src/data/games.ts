@@ -1,58 +1,87 @@
 export interface Game {
-  description: ReactNode;
   id: string;
   title: string;
-  image: string;
-  status: 'released' | 'in-development' | 'coming-soon';
+  developer: string;
+  releaseDate: string;
   platforms: string[];
-  releaseDate?: string;
+  status: 'released' | 'in-development' | 'coming-soon';
+  description: string;
+  longDescription: string;
+  image: string;
+  genre: string;
 }
 
 export const games: Game[] = [
   {
     id: "star-bind",
     title: "Star Bind",
-    image: "/assets/games/StarBindCardImage.png",
+    developer: "Alien Games Studio",
+    releaseDate: "2023-11-15",
+    platforms: ["PC", "PlayStation 5", "Xbox Series X"],
     status: "released",
-    platforms: ["PC", "Mobile"],
-    releaseDate: "2024",
+    description: "",
+    longDescription: "",
+    image: "/assets/games/star-bind/card.png",
+    genre: "Ação/Aventura"
   },
   {
     id: "vapor-stories",
     title: "Vapor Stories",
-    image: "/assets/games/VaporStoriesCardImage.PNG",
+    developer: "Alien Games Studio",
+    releaseDate: "2024-03-22",
+    platforms: ["PC", "PlayStation 5"],
     status: "released",
-    platforms: ["PC", "PS5"],
-    releaseDate: "2024",
+    description: "",
+    longDescription: "",
+    image: "/assets/games/vapor-stories/card.png",
+    genre: "Ação/Aventura"
   },
   {
     id: "cell-wars",
     title: "Cell Wars",
-    image: "/assets/games/CellWarsCardImage.PNG",
-    status: "released",
-    platforms: ["PC", "Xbox"],
-    releaseDate: "2024",
+    developer: "Alien Games Studio",
+    releaseDate: "2024-06-15",
+    platforms: ["PC", "Xbox Series X"],
+    status: "in-development",
+    description: "",
+    longDescription: "",
+    image: "/assets/games/cell-wars/card.png",
+    genre: "Estratégia"
   },
   {
     id: "eco-city-planner",
     title: "Eco City Planner",
-    image: "/assets/games/ecocityplanner.png",
-    status: "released",
+    developer: "Alien Games Studio",
+    releaseDate: "2024-09-30",
     platforms: ["PC", "Mobile"],
-    releaseDate: "2024",
+    status: "coming-soon",
+    description: "",
+    longDescription: "",
+    image: "/assets/games/eco-city-planner/card.png",
+    genre: "Simulação"
   },
   {
     id: "hero-vs-1000",
     title: "Hero vs 1000",
-    image: "/assets/games/herovs1000.png",
+    developer: "Alien Games Studio",
+    releaseDate: "2024-12-10",
+    platforms: ["PC", "PlayStation 5"],
     status: "in-development",
-    platforms: ["PC", "PS5"],
+    description: "",
+    longDescription: "",
+    image: "/assets/games/hero-vs-1000/card.png",
+    genre: "Ação"
   },
   {
     id: "office-hero",
     title: "Office Hero",
-    image: "/assets/games/officehero.png",
+    developer: "Alien Games Studio",
+    releaseDate: "2025-02-15",
+    platforms: ["PC", "Mobile", "Nintendo Switch"],
     status: "coming-soon",
-    platforms: ["PC", "Mobile", "Switch"],
-  },
+    description: "",
+    longDescription: "",
+    image: "/assets/games/office-hero/card.png",
+    genre: "Aventura"
+  }
 ];

@@ -28,10 +28,11 @@
     "careers": "Careers",
     "pressKit": "Press Kit",
     "contact": "Contact",
-    "copyright": "© 2024 AlienX. All rights reserved.",
+    "copyright": " 2024 AlienX. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use"
   },
+  "loading": "Loading game...",
   "gameCard": {
     "released": "RELEASED",
     "inDevelopment": "IN DEVELOPMENT",
@@ -78,6 +79,58 @@
     "company": "Company",
     "viewDetails": "View Details",
     "companyDescription": "AlienX is an independent development studio from Rio de Janeiro focused on transforming complex programming concepts into intuitive visual experiences and engaging games."
+  },
+  "gameDetail": {
+    "status": {
+      "released": "Available",
+      "inDevelopment": "In Development",
+      "comingSoon": "Coming Soon"
+    },
+    "availableOn": "Available on:",
+    "releaseDate": "Release Date:",
+    "aboutGame": "About the Game",
+    "developer": "Developer",
+    "genre": "Genre",
+    "platforms": "Platforms",
+    "systemRequirements": {
+      "os": "OS:",
+      "processor": "Processor:",
+      "memory": "Memory:",
+      "graphics": "Graphics:",
+      "storage": "Storage:",
+      "ssdRecommended": "(SSD recommended)",
+      "windows": "Windows 10/11 64-bit",
+      "windowsMin": "Windows 10 64-bit",
+      "processorMin": "Intel Core i5-6600K / AMD Ryzen 5 1600",
+      "processorRec": "Intel Core i7-9700K / AMD Ryzen 7 3700X",
+      "memoryMin": "12 GB RAM",
+      "memoryRec": "16 GB RAM",
+      "graphicsMin": "NVIDIA GTX 1060 6GB / AMD RX 580 8GB",
+      "graphicsRec": "NVIDIA RTX 2070 / AMD RX 5700 XT",
+      "storageMin": "50 GB available space",
+      "storageRec": "50 GB available space"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "viewImage": "View image",
+      "viewVideo": "View video"
+    },
+    "features": {
+      "title": "Key Features",
+      "items": [
+        "Massive open world to explore with unique ecosystems",
+        "Dynamic and fluid combat system",
+        "Rich story with multiple endings",
+        "Next-gen graphics with ray tracing support"
+      ]
+    },
+    "requirements": {
+      "title": "System Requirements",
+      "minimum": "Minimum",
+      "recommended": "Recommended"
+    },
+    "media": "Media"
   },
   "aboutPage": {
     "hero": {

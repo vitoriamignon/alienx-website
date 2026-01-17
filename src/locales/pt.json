@@ -28,10 +28,11 @@
     "careers": "Carreiras",
     "pressKit": "Press Kit",
     "contact": "Contato",
-    "copyright": "© 2024 AlienX. Todos os direitos reservados.",
+    "copyright": " 2024 AlienX. Todos os direitos reservados.",
     "privacy": "Política de Privacidade",
     "terms": "Termos de Uso"
   },
+  "loading": "Carregando jogo...",
   "gameCard": {
     "released": "LANÇADO",
     "inDevelopment": "EM DESENVOLVIMENTO",
@@ -87,6 +88,58 @@
     "company": "Empresa",
     "viewDetails": "Ver Detalhes",
     "companyDescription": "A AlienX é um estúdio de desenvolvimento independente do Rio de Janeiro focado em transformar conceitos complexos de programação em experiências visuais intuitivas e jogos envolventes."
+  },
+  "gameDetail": {
+    "status": {
+      "released": "Disponível",
+      "inDevelopment": "Em Desenvolvimento",
+      "comingSoon": "Em Breve"
+    },
+    "availableOn": "Disponível em:",
+    "releaseDate": "Lançamento:",
+    "aboutGame": "Sobre o Jogo",
+    "developer": "Desenvolvedor",
+    "genre": "Gênero",
+    "platforms": "Plataformas",
+    "systemRequirements": {
+      "os": "SO:",
+      "processor": "Processador:",
+      "memory": "Memória:",
+      "graphics": "Placa de vídeo:",
+      "storage": "Armazenamento:",
+      "ssdRecommended": "(SSD recomendado)",
+      "windows": "Windows 10/11 64-bit",
+      "windowsMin": "Windows 10 64-bit",
+      "processorMin": "Intel Core i5-6600K / AMD Ryzen 5 1600",
+      "processorRec": "Intel Core i7-9700K / AMD Ryzen 7 3700X",
+      "memoryMin": "12 GB de RAM",
+      "memoryRec": "16 GB de RAM",
+      "graphicsMin": "NVIDIA GTX 1060 6GB / AMD RX 580 8GB",
+      "graphicsRec": "NVIDIA RTX 2070 / AMD RX 5700 XT",
+      "storageMin": "50 GB de espaço disponível",
+      "storageRec": "50 GB de espaço disponível"
+    },
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Próximo",
+      "viewImage": "Ver imagem",
+      "viewVideo": "Ver vídeo"
+    },
+    "features": {
+      "title": "Características Principais",
+      "items": [
+        "Mundo aberto massivo para explorar com ecossistemas únicos",
+        "Sistema de combate dinâmico e fluido",
+        "História rica com múltiplos finais",
+        "Gráficos de última geração com suporte a ray tracing"
+      ]
+    },
+    "requirements": {
+      "title": "Requisitos do Sistema",
+      "minimum": "Mínimos",
+      "recommended": "Recomendados"
+    },
+    "media": "Mídia"
   },
   "aboutPage": {
     "hero": {

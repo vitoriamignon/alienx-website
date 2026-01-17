@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Presskit from "./pages/Presskit";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Contact from "./pages/Contact";
+import { GameDetail } from "./pages/GameDetail";
 
 function App() {
   return (
@@ -41,6 +42,15 @@ function App() {
               </MainLayout>
             }
           />     
+          {/* Rota Dinâmica para Detalhes do Jogo */}
+          <Route
+            path="/games/:slug"
+            element={
+              <MainLayout>
+                <GameDetail />
+              </MainLayout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>

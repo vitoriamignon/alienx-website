@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import type { Game } from '../data/games';
 import { games } from '../data/games';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -97,7 +98,10 @@ export default function GameCard({ gameId }: GameCardProps) {
   }
 
   return (
-    <div className="group bg-surface rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-white/10 hover:border-accent-green/50">
+    <Link 
+      to={`/games/${game.id}`}
+      className="block group bg-surface rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-white/10 hover:border-accent-green/50"
+    >
       {/* Desktop: Horizontal Layout */}
       <div className="hidden md:flex">
         {/* Image Section */}
@@ -209,6 +213,6 @@ export default function GameCard({ gameId }: GameCardProps) {
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
