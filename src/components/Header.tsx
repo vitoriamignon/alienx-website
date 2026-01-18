@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import logoAlienx from "../assets/logo-alienx.png";
+import SocialIcons from "./SocialIcons";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -25,34 +26,38 @@ export default function Header() {
 
         {/* MENU DESKTOP — ESQUERDA */}
         <nav className="hidden md:flex items-center gap-6 text-textPrimary text-sm w-full font-poppins font-medium">
-          {/* Link para a Página ABOUT (Rota) */}
-          <Link to="/about" className={navLinkClass}>
-            {t.nav.about}
-          </Link>
+  <Link to="/about" className={navLinkClass}>
+    {t.nav.about}
+  </Link>
 
-          {/* Link para a Seção JOGOS (Âncora na Home com / na frente) */}
-          <a href="/#jogos" className={navLinkClass}>
-            {t.nav.games}
-          </a>
+  <a href="/#jogos" className={navLinkClass}>
+    {t.nav.games}
+  </a>
 
-          {/* Link para a Página PRESSKIT (Rota) */}
-          <Link to="/presskit" className={navLinkClass}>
-            {t.nav.presskit}
-          </Link>
+  <Link to="/presskit" className={navLinkClass}>
+    {t.nav.presskit}
+  </Link>
 
-          {/* Link para a Seção CONTATO (Âncora na Home com / na frente) */}
-          <Link to="/contact" className={navLinkClass}>
-                {t.nav.contact}
-              </Link>
+  <Link to="/contact" className={navLinkClass}>
+    {t.nav.contact}
+  </Link>
 
-          {/* IDIOMA - Botão com borda brilhante */}
-          <button
-            onClick={toggleLanguage}
-            className="ml-auto border border-white/30 px-3 py-1 rounded text-xs transition-all duration-300 font-bold hover:border-accent-green hover:text-accent-green hover:shadow-[0_0_10px_#B6FF2E] hover:bg-accent-green/10"
-          >
-            {language === 'pt' ? 'EN' : 'PT'}
-          </button>
-        </nav>
+  {/* EMPURRA TUDO PARA A DIREITA */}
+  <div className="ml-auto flex items-center gap-4">
+
+    {/* REDES SOCIAIS */}
+    <SocialIcons />
+
+    {/* BOTÃO DE IDIOMA */}
+    <button
+      onClick={toggleLanguage}
+      className="border border-white/30 px-3 py-1 rounded text-xs transition-all duration-300 font-bold hover:border-accent-green hover:text-accent-green hover:shadow-[0_0_10px_#B6FF2E] hover:bg-accent-green/10"
+    >
+      {language === "pt" ? "EN" : "PT"}
+    </button>
+  </div>
+</nav>
+
 
         {/* LOGO — SEMPRE CENTRALIZADA */}
         <Link 
@@ -90,6 +95,10 @@ export default function Header() {
           >
             {language === 'pt' ? 'EN' : 'PT'}
           </button>
+          {/* REDES SOCIAIS — MOBILE */}
+          <div className="flex justify-center gap-6 pt-4 border-t border-white/10">
+            <SocialIcons />
+          </div>
         </nav>
       )}
     </header>
