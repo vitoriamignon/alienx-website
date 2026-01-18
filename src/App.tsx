@@ -6,6 +6,7 @@ import Presskit from "./pages/Presskit";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Contact from "./pages/Contact";
 import { GameDetail } from "./pages/GameDetail";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -41,7 +42,15 @@ function App() {
                 <Contact />
               </MainLayout>
             }
-          />     
+          />
+          <Route
+            path="/privacy"
+            element={
+              <MainLayout>
+                <PrivacyPolicy />
+              </MainLayout>
+            }
+          />
           {/* Rota Dinâmica para Detalhes do Jogo */}
           <Route
             path="/games/:slug"

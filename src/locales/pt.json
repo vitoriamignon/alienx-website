@@ -169,5 +169,36 @@
   "email": "E-mail",
   "message": "Mensagem",
   "send": "Enviar"
-}
+},
+  "privacy": {
+    "title": "Política de Privacidade",
+    "introduction": {
+      "title": "Introdução",
+      "content": "A AlienX Game Studio valoriza a privacidade dos nossos usuários e está comprometida em proteger suas informações pessoais. Esta Política de Privacidade explica como coletamos, usamos, compartilhamos e protegemos suas informações quando você utiliza nossos serviços."
+    },
+    "dataCollection": {
+      "title": "Coleta de Dados",
+      "content": "Podemos coletar informações pessoais como nome, endereço de e-mail, dados de uso do aplicativo e informações técnicas do dispositivo quando você interage com nossos jogos e serviços."
+    },
+    "dataUsage": {
+      "title": "Uso das Informações",
+      "content": "Utilizamos suas informações para melhorar nossos jogos, fornecer suporte ao cliente, enviar atualizações importantes e personalizar sua experiência de jogo."
+    },
+    "dataSharing": {
+      "title": "Compartilhamento de Dados",
+      "content": "Não vendemos ou alugamos suas informações pessoais a terceiros. Podemos compartilhar dados agregados e anonimizados para fins analíticos ou conforme exigido por lei."
+    },
+    "dataSecurity": {
+      "title": "Segurança das Informações",
+      "content": "Implementamos medidas de segurança técnicas e organizacionais para proteger suas informações contra acesso não autorizado, alteração, divulgação ou destruição."
+    },
+    "userRights": {
+      "title": "Direitos do Usuário",
+      "content": "Você tem o direito de acessar, corrigir, excluir ou limitar o processamento de suas informações pessoais. Entre em contato conosco para exercer esses direitos."
+    },
+    "contact": {
+      "title": "Informações de Contato",
+      "content": "Para dúvidas sobre esta Política de Privacidade, entre em contato conosco através do e-mail: privacy@alienx.com ou visite nossa página de contato."
+    }
+  }
 }
