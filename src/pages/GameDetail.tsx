@@ -254,8 +254,7 @@ export function GameDetail() {
     const timer = setTimeout(() => {
       const gameData = getGameData(slug || '');
       if (gameData) {
-        const gameKey = slug?.replace(/-([a-z])/g, (_, c) => c.toUpperCase()) || '';
-        gameData.longDescription = (t.games as any)[gameKey]?.longDescription || '';
+        const gameKey = slug?.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase()) || '';        gameData.longDescription = (t.games as any)[gameKey]?.longDescription || '';
       }
       setGame(gameData);
       setLoading(false);

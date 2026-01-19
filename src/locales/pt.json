@@ -43,27 +43,27 @@
     "starBind": {
       "description": "Uma aventura estelar onde você conecta estrelas para salvar a galáxia em uma jornada épica.",
       "tagline": "Conecte as estrelas!",
-      "longDescription": "Embarque em uma jornada intergaláctica como um viajante espacial que descobre um antigo segredo cósmico. Explore planetas exóticos, interaja com raças alienígenas e desvende mistérios antigos em uma narrativa rica e imersiva."
+      "longDescription": "Enfrente o desconhecido na pele de Lazlo neste rogue-lite de ação frenético. Explore combinações infinitas de habilidades e equipamentos estelares para superar confrontos implacáveis. O diferencial está nas 'Estrelas', suas aliadas de batalha que crescem com você: desbloqueie melhorias permanentes usando o pó estelar e refine sua estratégia a cada tentativa de sobrevivência. Domine o sistema de progressão e torne sua parceira de combate uma força imparável."
     },
     "vaporStories": {
       "description": "Histórias envolventes em um mundo de vapor e mistério, explorando narrativas profundas.",
       "tagline": "Mergulhe no vapor e mistério.",
-      "longDescription": "Em um mundo onde a tecnologia a vapor e a magia se misturam, siga a jornada de um inventor excêntrico que descobre uma conspiração que pode mudar o destino de sua cidade para sempre."
+      "longDescription": "O mundo não é mais o mesmo. Nesta realidade vitoriana, a tecnologia a vapor atingiu um ápice inimaginável, dando vida a robôs projetados para servir. Porém, um erro de cálculo na inteligência artificial dessas máquinas gerou uma conclusão lógica implacável: para a sociedade evoluir, o convívio humano deve ser erradicado. Agora, os cidadãos são capturados e isolados em uma tentativa das máquinas de 'otimizar' o mundo."
     },
     "cellWars": {
       "description": "Batalhas épicas em um universo celular, onde células lutam por supremacia.",
       "tagline": "Batalhe no universo celular.",
-      "longDescription": "Assuma o controle de uma colônia de células em um ambiente hostil. Evolua suas células, desenvolva novas habilidades e lute contra ameaças microscópicas neste jogo de estratégia único."
+      "longDescription": "Mergulhe na luta primordial pela existência em Guerras Celulares, um jogo de estratégia focado em evolução e sobrevivência microscópica. Assuma o controle de um organismo primitivo e gerencie batalhas biológicas em um ambiente feroz onde apenas os mais aptos prosperam. O núcleo da jogabilidade permite que você monte e personalize sua célula estrategicamente, adaptando seus genes para caçar, reproduzir e dominar o ecossistema. Supere a seleção natural e garanta o futuro da sua linhagem em um combate onde cada mutação conta."
     },
     "ecoCityPlanner": {
       "description": "Planeje e construa cidades ecológicas em um futuro sustentável.",
       "tagline": "Construa cidades sustentáveis.",
-      "longDescription": "Projete e gerencie uma cidade ecologicamente correta, equilibrando desenvolvimento urbano e preservação ambiental. Enfrente desafios como mudanças climáticas e crescimento populacional enquanto cria uma metrópole sustentável."
+      "longDescription": "Assuma o papel de consultor urbano em Eco City Planner, um simulador estratégico que utiliza mecânicas de cartas para o desenvolvimento de cidades sustentáveis. Em um grid dinâmico, cada construção exige uma gestão precisa: suas escolhas impactam diretamente os níveis de energia, poluição e economia. Antecipe eventos ambientais e equilibre recursos em tempo real para transformar territórios inexplorados em metrópoles resilientes. Aqui, o planejamento inteligente é a sua maior ferramenta de sobrevivência."
     },
     "heroVs1000": {
       "description": "Enfrente hordas inimigas em batalhas épicas contra mil adversários.",
       "tagline": "Enfrente mil inimigos.",
-      "longDescription": "Neste jogo de ação frenético, você é um herói que precisa enfrentar ondas de milhares de inimigos. Melhore suas habilidades, desbloqueie equipamentos e sobreviva o máximo que puder!"
+      "longDescription": "Encare um desafio de sobrevivência extrema em Hero Vs 1000, um jogo de ação focado em combate de hordas e precisão. Atravesse três eras históricas — Medieval, Pirataria e Moderna — assumindo o controle de heróis com estilos de luta únicos. Sua missão é clara: aniquilar 1000 oponentes por fase para avançar. Com um sistema de progressão focado em desbloqueio de armas e conquistas de maestria, o jogo exige reflexos rápidos e estratégia para gerenciar multidões implacáveis de inimigos simultâneos."
     },
     "officeHero": {
       "description": "Sobreviva aos desafios do mundo corporativo em uma aventura de escritório.",
@@ -162,15 +162,16 @@
       "trajectoryText": "Sediada no Rio de Janeiro e fundada em 28 de dezembro de 2016, nossa missão é clara: proporcionar a melhor experiência possível em jogos imersivos, criando personagens carismáticos e jogabilidade envolvente."
     },
     "team": {
-      "title": "NOSSO TIME",
-      "roles": {
-        "founder": "Fundador & Desenvolvedor",
-        "leadDev": "Líder Técnico",
-        "artist": "Artista Conceitual",
-        "designer": "Game Designer"
+        "title": "NOSSO TIME",
+        "roles": {
+          "eduardo": "Programador",
+          "joao": "Artista 2D e 3D",
+          "leonidas": "Gerente e Programador",
+          "pedro": "Game Designer • Artista 2D • UI/UX",
+          "rodrigo": "Game Designer • Editor • Localizador"
+        }
       }
-    }
-  },
+    },
   "contact": {
   "title": "Contato",
   "subtitle": "Entre em contato com a equipe AlienX.",
