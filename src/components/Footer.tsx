@@ -3,6 +3,7 @@ import logoAlienx from "../assets/logo-alienx.png";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-black border-t border-white/10 py-12 px-6">
@@ -136,7 +137,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-textSecondary text-sm">{t.footer.copyright}</p>
+          <p className="text-textSecondary text-sm">© {currentYear}{t.footer.copyright}</p>
           <div className="flex space-x-6 mt-4 md:mt-0 text-sm text-textSecondary">
             <a href="/privacy" className="hover:text-accent-green transition-colors">
               {t.footer.privacy}
