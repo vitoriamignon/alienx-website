@@ -41,31 +41,40 @@
   },
   "games": {
     "starBind": {
-      "description": "A stellar adventure where you connect stars to save the galaxy on an epic journey."
+      "description": "A stellar adventure where you connect stars to save the galaxy on an epic journey.",
+      "longDescription": "Embark on an intergalactic journey as a space traveler who discovers an ancient cosmic secret. Explore exotic planets, interact with alien races, and unravel ancient mysteries in a rich and immersive narrative."
     },
     "vaporStories": {
-      "description": "Engaging stories in a world of steam and mystery, exploring deep narratives."
+      "description": "Engaging stories in a world of steam and mystery, exploring deep narratives.",
+      "longDescription": "In a world where steam technology and magic blend, follow the journey of an eccentric inventor who discovers a conspiracy that could change the fate of his city forever."
     },
     "cellWars": {
-      "description": "Epic battles in a cellular universe, where cells fight for supremacy."
+      "description": "Epic battles in a cellular universe, where cells fight for supremacy.",
+      "longDescription": "Take control of a cell colony in a hostile environment. Evolve your cells, develop new skills, and fight microscopic threats in this unique strategy game."
     },
     "ecoCityPlanner": {
-      "description": "Plan and build eco-friendly cities in a sustainable future."
+      "description": "Plan and build eco-friendly cities in a sustainable future.",
+      "longDescription": "Design and manage an ecologically correct city, balancing urban development and environmental preservation. Face challenges like climate change and population growth while creating a sustainable metropolis."
     },
     "heroVs1000": {
-      "description": "Face enemy hordes in epic battles against a thousand adversaries."
+      "description": "Face enemy hordes in epic battles against a thousand adversaries.",
+      "longDescription": "In this frantic action game, you are a hero who must face waves of thousands of enemies. Upgrade your skills, unlock equipment, and survive as long as you can!"
     },
     "officeHero": {
-      "description": "Survive the challenges of the corporate world in an office adventure."
+      "description": "Survive the challenges of the corporate world in an office adventure.",
+      "longDescription": "In a world where office work is an adventure, you must navigate the challenges of daily corporate life while unraveling mysteries and making unexpected allies."
     },
     "cosmicVoid": {
-      "description": "An epic journey through the cosmic void, where each decision shapes the galaxy's destiny."
+      "description": "An epic journey through the cosmic void, where each decision shapes the galaxy's destiny.",
+      "longDescription": "An epic journey through the cosmic void, where each decision shapes the galaxy's destiny. Navigate dangerous nebulae, form alliances with cosmic beings, and determine the future of the universe."
     },
     "neuralShadows": {
-      "description": "Dive into the collective mind in a cyberpunk thriller where reality and illusion blur."
+      "description": "Dive into the collective mind in a cyberpunk thriller where reality and illusion blur.",
+      "longDescription": "Dive into the collective mind in a cyberpunk thriller where reality and illusion blur. Unravel digital conspiracies, fight virtual hackers, and question your own sanity in this dystopian world."
     },
     "echoesOfEternity": {
-      "description": "Explore ancient ruins and unravel mysteries that echo through time."
+      "description": "Explore ancient ruins and unravel mysteries that echo through time.",
+      "longDescription": "Explore ancient ruins and unravel mysteries that echo through time. Travel through lost eras, collect powerful artifacts, and reveal secrets that transcend the barriers of time."
     }
   },
   "nav": {

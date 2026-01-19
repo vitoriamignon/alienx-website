@@ -42,39 +42,48 @@
   "games": {
     "starBind": {
       "description": "Uma aventura estelar onde você conecta estrelas para salvar a galáxia em uma jornada épica.",
-      "tagline": "Conecte as estrelas!"
+      "tagline": "Conecte as estrelas!",
+      "longDescription": "Embarque em uma jornada intergaláctica como um viajante espacial que descobre um antigo segredo cósmico. Explore planetas exóticos, interaja com raças alienígenas e desvende mistérios antigos em uma narrativa rica e imersiva."
     },
     "vaporStories": {
       "description": "Histórias envolventes em um mundo de vapor e mistério, explorando narrativas profundas.",
-      "tagline": "Mergulhe no vapor e mistério."
+      "tagline": "Mergulhe no vapor e mistério.",
+      "longDescription": "Em um mundo onde a tecnologia a vapor e a magia se misturam, siga a jornada de um inventor excêntrico que descobre uma conspiração que pode mudar o destino de sua cidade para sempre."
     },
     "cellWars": {
       "description": "Batalhas épicas em um universo celular, onde células lutam por supremacia.",
-      "tagline": "Batalhe no universo celular."
+      "tagline": "Batalhe no universo celular.",
+      "longDescription": "Assuma o controle de uma colônia de células em um ambiente hostil. Evolua suas células, desenvolva novas habilidades e lute contra ameaças microscópicas neste jogo de estratégia único."
     },
     "ecoCityPlanner": {
       "description": "Planeje e construa cidades ecológicas em um futuro sustentável.",
-      "tagline": "Construa cidades sustentáveis."
+      "tagline": "Construa cidades sustentáveis.",
+      "longDescription": "Projete e gerencie uma cidade ecologicamente correta, equilibrando desenvolvimento urbano e preservação ambiental. Enfrente desafios como mudanças climáticas e crescimento populacional enquanto cria uma metrópole sustentável."
     },
     "heroVs1000": {
       "description": "Enfrente hordas inimigas em batalhas épicas contra mil adversários.",
-      "tagline": "Enfrente mil inimigos."
+      "tagline": "Enfrente mil inimigos.",
+      "longDescription": "Neste jogo de ação frenético, você é um herói que precisa enfrentar ondas de milhares de inimigos. Melhore suas habilidades, desbloqueie equipamentos e sobreviva o máximo que puder!"
     },
     "officeHero": {
       "description": "Sobreviva aos desafios do mundo corporativo em uma aventura de escritório.",
-      "tagline": "Sobreviva à vida no escritório."
+      "tagline": "Sobreviva à vida no escritório.",
+      "longDescription": "Em um mundo onde trabalhar em escritório é uma aventura, você deve navegar pelos desafios do dia a dia corporativo enquanto desvenda mistérios e faz aliados inesperados."
     },
     "cosmicVoid": {
       "description": "Uma jornada épica através do vazio cósmico, onde cada decisão molda o destino da galáxia.",
-      "tagline": "Molde o destino da galáxia."
+      "tagline": "Molde o destino da galáxia.",
+      "longDescription": "Uma jornada épica através do vazio cósmico, onde cada decisão molda o destino da galáxia. Navegue por nebulosas perigosas, forme alianças com seres cósmicos e determine o futuro do universo."
     },
     "neuralShadows": {
       "description": "Mergulhe na mente coletiva em um thriller cyberpunk onde realidade e ilusão se confundem.",
-      "tagline": "Confunda realidade e ilusão."
+      "tagline": "Confunda realidade e ilusão.",
+      "longDescription": "Mergulhe na mente coletiva em um thriller cyberpunk onde realidade e ilusão se confundem. Desvende conspirações digitais, lute contra hackers virtuais e questione sua própria sanidade neste mundo distópico."
     },
     "echoesOfEternity": {
       "description": "Explore ruínas antigas e desvende mistérios que ecoam através do tempo.",
-      "tagline": "Desvende mistérios atemporais."
+      "tagline": "Desvende mistérios atemporais.",
+      "longDescription": "Explore ruínas antigas e desvende mistérios que ecoam através do tempo. Viaje por eras perdidas, colete artefatos poderosos e revele segredos que transcendem as barreiras do tempo."
     }
   },
   "nav": {

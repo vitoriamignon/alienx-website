@@ -27,14 +27,11 @@ function getGameData(slug: string): GameData | null {
   const gameFromData = games.find(game => game.id === slug);
   if (!gameFromData) return null;
 
-  const gameDetails: Record<string, Omit<GameData, 'id' | 'title' | 'image' | 'status' | 'platforms' | 'releaseDate'>> = {
+  const gameDetails: Record<string, Omit<GameData, 'id' | 'title' | 'image' | 'status' | 'platforms' | 'releaseDate' | 'longDescription'>> = {
     'star-bind': {
       developer: 'Alien Games Studio',
-      releaseDate: '2023-11-15',
       genre: 'Ação/Aventura',
       description: 'Uma aventura espacial épica em um universo aberto',
-      longDescription:
-        'Embarque em uma jornada intergaláctica como um viajante espacial que descobre um antigo segredo cósmico. Explore planetas exóticos, interaja com raças alienígenas e desvende mistérios antigos em uma narrativa rica e imersiva.',
       gallery: [
         { type: 'video', url: '/assets/games/star-bind/gallery/video.mp4', thumbnail: '/assets/games/star-bind/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/star-bind/gallery/img1.jpg' },
@@ -46,10 +43,8 @@ function getGameData(slug: string): GameData | null {
     },
 'vapor-stories': {
       developer: 'Alien Games Studio',
-      releaseDate: '2024-03-22',
       genre: 'Ação/Aventura',
       description: 'Uma história de mistério e aventura em um mundo steampunk',
-      longDescription: 'Em um mundo onde a tecnologia a vapor e a magia se misturam, siga a jornada de um inventor excêntrico que descobre uma conspiração que pode mudar o destino de sua cidade para sempre.',
       gallery: [
         { type: 'video', url: '/assets/games/vapor-stories/gallery/video.mp4', thumbnail: '/assets/games/vapor-stories/gallery/img1.png' },
         { type: 'image', url: '/assets/games/vapor-stories/gallery/img1.png' },
@@ -60,10 +55,8 @@ function getGameData(slug: string): GameData | null {
     },
     'cell-wars': {
       developer: 'Alien Games Studio',
-      releaseDate: '2024-06-15',
       genre: 'Estratégia',
       description: 'Construa, lute e domine em um mundo microscópico',
-      longDescription: 'Assuma o controle de uma colônia de células em um ambiente hostil. Evolua suas células, desenvolva novas habilidades e lute contra ameaças microscópicas neste jogo de estratégia único.',
       gallery: [
         { type: 'video', url: '/assets/games/cell-wars/gallery/video.mp4', thumbnail: '/assets/games/cell-wars/gallery/img1.png' },
         { type: 'image', url: '/assets/games/cell-wars/gallery/img1.png' },
@@ -75,10 +68,8 @@ function getGameData(slug: string): GameData | null {
     },
     'eco-city-planner': {
       developer: 'Alien Games Studio',
-      releaseDate: '2024-01-10',
       genre: 'Simulação',
       description: 'Construa a cidade sustentável do futuro',
-      longDescription: 'Projete e gerencie uma cidade ecologicamente correta, equilibrando desenvolvimento urbano e preservação ambiental. Enfrente desafios como mudanças climáticas e crescimento populacional enquanto cria uma metrópole sustentável.',
       gallery: [
         { type: 'video', url: '/assets/games/eco-city-planner/gallery/video.mp4', thumbnail: '/assets/games/eco-city-planner/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/eco-city-planner/gallery/img1.jpg' },
@@ -91,10 +82,8 @@ function getGameData(slug: string): GameData | null {
     },
     'hero-vs-1000': {
       developer: 'Alien Games Studio',
-      releaseDate: '2024-09-30',
       genre: 'Ação',
       description: 'Um herói contra milhares de inimigos',
-      longDescription: 'Neste jogo de ação frenético, você é um herói que precisa enfrentar ondas de milhares de inimigos. Melhore suas habilidades, desbloqueie equipamentos e sobreviva o máximo que puder!',
       gallery: [
         { type: 'video', url: '/assets/games/hero-vs-1000/gallery/video.mp4', thumbnail: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
@@ -111,10 +100,8 @@ function getGameData(slug: string): GameData | null {
     },
     'office-hero': {
       developer: 'Alien Games Studio',
-      releaseDate: '2025-02-15',
       genre: 'Aventura',
       description: 'A rotina do escritório nunca foi tão heroica',
-      longDescription: 'Em um mundo onde trabalhar em escritório é uma aventura, você deve navegar pelos desafios do dia a dia corporativo enquanto desvenda mistérios e faz aliados inesperados.',
       gallery: [
         { type: 'video', url: '/assets/games/office-hero/gallery/video.mp4', thumbnail: '/assets/games/office-hero/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/office-hero/gallery/img1.jpg' },
@@ -133,17 +120,15 @@ function getGameData(slug: string): GameData | null {
 
   const details = gameDetails[slug] || {
     developer: 'Alien Games Studio',
-    releaseDate: '2024-01-01',
     genre: 'Ação/Aventura',
     description: 'Um jogo incrível da Alien Games',
-    longDescription: 'Descrição detalhada do jogo será adicionada em breve.',
     gallery: [{ type: 'image', url: '/assets/games/StarBindCardImage.png' }],
   };
 
   return {
     ...gameFromData,
     ...details,
-    releaseDate: gameFromData.releaseDate || details.releaseDate,
+    longDescription: '', // Will be set from translations
   };
 }
 
@@ -236,11 +221,15 @@ export function GameDetail() {
   useEffect(() => {
     const timer = setTimeout(() => {
       const gameData = getGameData(slug || '');
+      if (gameData) {
+        const gameKey = slug?.replace(/-([a-z])/g, (_, c) => c.toUpperCase()) || '';
+        gameData.longDescription = (t.games as any)[gameKey]?.longDescription || '';
+      }
       setGame(gameData);
       setLoading(false);
     }, 500);
     return () => clearTimeout(timer);
-  }, [slug]);
+  }, [slug, t]);
 
   if (loading || !game) {
     return (
