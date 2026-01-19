@@ -2,7 +2,12 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { games } from '../data/games';
 import { useLanguage } from '../contexts/LanguageContext';
+import { ShoppingCart } from "lucide-react";
 
+interface StoreLink {
+  platform: 'Steam' | 'Epic' | 'PlayStation' | 'Xbox' | 'GooglePlay';
+  url: string;
+}
 interface GalleryItem {
   type: 'image' | 'video';
   url: string;
@@ -21,6 +26,7 @@ interface GameData {
   image: string;
   gallery: GalleryItem[];
   genre: string;
+  stores?: StoreLink[];
 }
 
 function getGameData(slug: string): GameData | null {
@@ -32,6 +38,12 @@ function getGameData(slug: string): GameData | null {
       developer: 'Alien Games Studio',
       genre: 'Ação/Aventura',
       description: 'Uma aventura espacial épica em um universo aberto',
+        stores: [
+    {
+      platform: 'Steam',
+      url: 'https://store.steampowered.com/app/2760830/Star_Bind/'
+    }
+  ],
       gallery: [
         { type: 'video', url: '/assets/games/star-bind/gallery/video.mp4', thumbnail: '/assets/games/star-bind/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/star-bind/gallery/img1.jpg' },
@@ -57,6 +69,13 @@ function getGameData(slug: string): GameData | null {
       developer: 'Alien Games Studio',
       genre: 'Estratégia',
       description: 'Construa, lute e domine em um mundo microscópico',
+       stores: [
+    {
+      platform: 'GooglePlay',
+      url: 'https://play.google.com/store/apps/details?id=com.AlienX.CellWars&hl=pt_BR'
+    }
+  ],
+      
       gallery: [
         { type: 'video', url: '/assets/games/cell-wars/gallery/video.mp4', thumbnail: '/assets/games/cell-wars/gallery/img1.png' },
         { type: 'image', url: '/assets/games/cell-wars/gallery/img1.png' },
@@ -70,6 +89,12 @@ function getGameData(slug: string): GameData | null {
       developer: 'Alien Games Studio',
       genre: 'Simulação',
       description: 'Construa a cidade sustentável do futuro',
+       stores: [
+    {
+      platform: 'Steam',
+      url: 'https://store.steampowered.com/app/3908930/Eco_City_Planner/'
+    }
+     ],
       gallery: [
         { type: 'video', url: '/assets/games/eco-city-planner/gallery/video.mp4', thumbnail: '/assets/games/eco-city-planner/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/eco-city-planner/gallery/img1.jpg' },
@@ -79,11 +104,18 @@ function getGameData(slug: string): GameData | null {
         { type: 'image', url: '/assets/games/eco-city-planner/gallery/img5.jpg' },
         { type: 'image', url: '/assets/games/eco-city-planner/gallery/img6.jpg' }
       ]
+      
     },
     'hero-vs-1000': {
       developer: 'Alien Games Studio',
       genre: 'Ação',
       description: 'Um herói contra milhares de inimigos',
+      stores: [
+    {
+      platform: 'Steam',
+      url: 'https://store.steampowered.com/app/2981760/Hero_Vs_1000/'
+    }
+     ],
       gallery: [
         { type: 'video', url: '/assets/games/hero-vs-1000/gallery/video.mp4', thumbnail: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
@@ -230,6 +262,16 @@ export function GameDetail() {
     }, 500);
     return () => clearTimeout(timer);
   }, [slug, t]);
+    const getStoreLabel = (platform: StoreLink['platform']) => {
+  switch (platform) {
+    case 'Steam':
+      return ' ';
+    case 'GooglePlay':
+      return 'Instalar agora';
+    default:
+      return 'Acessar loja';
+  }
+};
 
   if (loading || !game) {
     return (
@@ -268,6 +310,43 @@ export function GameDetail() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4 font-poppins">{game.title}</h1>
+            {game.stores?.length ? (
+                <div className="flex flex-wrap gap-4 mt-6">
+                  {game.stores.map((store) => (
+                 <a
+                  key={store.platform}
+                  href={store.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex items-center justify-center gap-3
+                    px-8 py-4
+                    rounded-xl
+                    bg-[#B6FF2E]
+                    text-black
+                    font-extrabold text-base tracking-wide
+                    shadow-lg shadow-[#B6FF2E]/40
+                    hover:brightness-110
+                    active:scale-95
+                    transition-all duration-200
+                  "
+                >
+                   <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-6 h-6"
+              >
+                <path d="M2 3h2l3.6 7.59-1.35 2.44A2 2 0 008 16h12v-2H8.42a.25.25 0 01-.22-.37L9.1 12h7.45a2 2 0 001.8-1.1l3.58-6.49A1 1 0 0021 3H5.21l-.94-2H2z" />
+                <circle cx="10.5" cy="18.5" r="1.5" />
+                <circle cx="17.5" cy="18.5" r="1.5" />
+              </svg>
+
+              {getStoreLabel(store.platform)}
+                </a>
+                  ))}
+                </div>
+              ) : null}
 
             {game.platforms && game.platforms.length > 0 && (
               <div className="flex flex-wrap gap-4 mt-6">
