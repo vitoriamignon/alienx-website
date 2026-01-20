@@ -37,6 +37,7 @@
     "released": "RELEASED",
     "inDevelopment": "IN DEVELOPMENT",
     "comingSoon": "COMING SOON",
+    "demo": "DEMO VERSION",
     "releasedIn": "Released in"
   },
   "games": {
@@ -93,7 +94,8 @@
     "status": {
       "released": "Available",
       "inDevelopment": "In Development",
-      "comingSoon": "Coming Soon"
+      "comingSoon": "Coming Soon",
+      "demo": "Demo Version"
     },
     "availableOn": "Available on:",
     "releaseDate": "Release Date:",

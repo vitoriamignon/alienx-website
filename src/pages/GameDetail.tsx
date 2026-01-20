@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { games } from '../data/games';
 import { useLanguage } from '../contexts/LanguageContext';
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, X } from "lucide-react";
 
 interface StoreLink {
   platform: 'Steam' | 'Epic' | 'PlayStation' | 'Xbox' | 'GooglePlay';
@@ -20,7 +20,7 @@ interface GameData {
   developer: string;
   releaseDate: string;
   platforms: string[];
-  status: 'released' | 'in-development' | 'coming-soon';
+  status: 'released' | 'in-development' | 'coming-soon' | 'demo';
   description: string;
   longDescription: string;
   image: string;
@@ -39,11 +39,10 @@ function getGameData(slug: string): GameData | null {
       genre: 'Ação/Aventura',
       description: 'Uma aventura espacial épica em um universo aberto',
         stores: [
-    {
-      platform: 'Steam',
-      url: 'https://store.steampowered.com/app/2760830/Star_Bind/'
-    }
-  ],
+          {platform: 'Steam',
+          url: 'https://store.steampowered.com/app/2760830/Star_Bind/'
+          }
+      ],
       gallery: [
         { type: 'video', url: '/assets/games/star-bind/gallery/video.mp4', thumbnail: '/assets/games/star-bind/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/star-bind/gallery/img1.jpg' },
@@ -53,10 +52,15 @@ function getGameData(slug: string): GameData | null {
         { type: 'image', url: '/assets/games/star-bind/gallery/img5.jpg' },
       ],
     },
-'vapor-stories': {
+    'vapor-stories': {
       developer: 'Alien Games Studio',
       genre: 'Ação/Aventura',
       description: 'Uma história de mistério e aventura em um mundo steampunk',
+        stores: [
+          {platform: 'Steam',
+          url: '#'
+          }
+      ],
       gallery: [
         { type: 'video', url: '/assets/games/vapor-stories/gallery/video.mp4', thumbnail: '/assets/games/vapor-stories/gallery/img1.png' },
         { type: 'image', url: '/assets/games/vapor-stories/gallery/img1.png' },
@@ -70,12 +74,10 @@ function getGameData(slug: string): GameData | null {
       genre: 'Estratégia',
       description: 'Construa, lute e domine em um mundo microscópico',
        stores: [
-    {
-      platform: 'GooglePlay',
-      url: 'https://play.google.com/store/apps/details?id=com.AlienX.CellWars&hl=pt_BR'
-    }
-  ],
-      
+        {platform: 'GooglePlay',
+        url: 'https://play.google.com/store/apps/details?id=com.AlienX.CellWars&hl=pt_BR'
+        }
+      ],
       gallery: [
         { type: 'video', url: '/assets/games/cell-wars/gallery/video.mp4', thumbnail: '/assets/games/cell-wars/gallery/img1.png' },
         { type: 'image', url: '/assets/games/cell-wars/gallery/img1.png' },
@@ -90,10 +92,9 @@ function getGameData(slug: string): GameData | null {
       genre: 'Simulação',
       description: 'Construa a cidade sustentável do futuro',
        stores: [
-    {
-      platform: 'Steam',
-      url: 'https://store.steampowered.com/app/3908930/Eco_City_Planner/'
-    }
+        {platform: 'Steam',
+        url: 'https://store.steampowered.com/app/3908930/Eco_City_Planner/'
+        }
      ],
       gallery: [
         { type: 'video', url: '/assets/games/eco-city-planner/gallery/video.mp4', thumbnail: '/assets/games/eco-city-planner/gallery/img1.jpg' },
@@ -111,10 +112,9 @@ function getGameData(slug: string): GameData | null {
       genre: 'Ação',
       description: 'Um herói contra milhares de inimigos',
       stores: [
-    {
-      platform: 'Steam',
-      url: 'https://store.steampowered.com/app/2981760/Hero_Vs_1000/'
-    }
+        {platform: 'Steam',
+        url: 'https://store.steampowered.com/app/2981760/Hero_Vs_1000/'
+        }
      ],
       gallery: [
         { type: 'video', url: '/assets/games/hero-vs-1000/gallery/video.mp4', thumbnail: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
@@ -134,6 +134,11 @@ function getGameData(slug: string): GameData | null {
       developer: 'Alien Games Studio',
       genre: 'Aventura',
       description: 'A rotina do escritório nunca foi tão heroica',
+      stores: [
+        {platform: 'Steam',
+        url: '#'
+        }
+    ],
       gallery: [
         { type: 'video', url: '/assets/games/office-hero/gallery/video.mp4', thumbnail: '/assets/games/office-hero/gallery/img1.jpg' },
         { type: 'image', url: '/assets/games/office-hero/gallery/img1.jpg' },
@@ -169,9 +174,11 @@ function getStatusColor(status: string) {
     case 'released':
       return 'bg-accent-green text-background';
     case 'in-development':
-      return 'bg-accent-yellow text-background';
+      return 'bg-sky-500 text-white';
     case 'coming-soon':
       return 'bg-accent-red text-textPrimary';
+    case 'demo':
+      return 'bg-purple-600 text-white';
     default:
       return 'bg-surface text-textPrimary';
   }
@@ -183,13 +190,15 @@ export function GameDetail() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [game, setGame] = useState<GameData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   
   // Fallback translations in case they're not defined in the translation files
   const translations = {
     status: {
       released: t.gameDetail?.status?.released || 'Disponível',
       inDevelopment: t.gameDetail?.status?.inDevelopment || 'Em Desenvolvimento',
-      comingSoon: t.gameDetail?.status?.comingSoon || 'Em Breve'
+      comingSoon: t.gameDetail?.status?.comingSoon || 'Em Breve',
+      demo: t.gameDetail?.status?.demo || 'Versão Demo'
     },
     availableOn: t.gameDetail?.availableOn || 'Disponível em:',
     releaseDate: t.gameDetail?.releaseDate || 'Lançamento:',
@@ -302,50 +311,49 @@ export function GameDetail() {
                   ? translations.status.released
                   : game.status === 'in-development'
                   ? translations.status.inDevelopment
-                  : translations.status.comingSoon}
+                  : game.status === 'coming-soon'
+                  ? translations.status.comingSoon
+                  : translations.status.demo}
               </span>
               <span className="text-textSecondary">•</span>
               <span className="text-textSecondary">{game.genre}</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4 font-poppins">{game.title}</h1>
-            {game.stores?.length ? (
-                <div className="flex flex-wrap gap-4 mt-6">
-                  {game.stores.map((store) => (
-                 <a
-                  key={store.platform}
-                  href={store.url}
-                  target="_blank"
+            
+            {/* --- INÍCIO: BOTÃO ÚNICO (COM LÓGICA DE MODAL) --- */}
+            {game.stores && game.stores.length > 0 && (
+              <div className="mt-6 mb-8">
+                <a
+                  href={game.stores[0].url}
+                  onClick={(e) => {
+                    // LÓGICA: Se o link for '#', abre o modal e não muda de página
+                    if (game.stores![0].url === '#') {
+                      e.preventDefault();
+                      setShowModal(true);
+                    }
+                  }}
+                  target={game.stores[0].url === '#' ? '_self' : '_blank'}
                   rel="noopener noreferrer"
                   className="
-                    inline-flex items-center justify-center gap-3
-                    px-8 py-4
-                    rounded-xl
-                    bg-[#B6FF2E]
+                    inline-flex items-center justify-center
+                    w-16 h-12 
+                    rounded-lg
+                    bg-[#B6FF2E] 
                     text-black
-                    font-extrabold text-base tracking-wide
-                    shadow-lg shadow-[#B6FF2E]/40
-                    hover:brightness-110
+                    shadow-[0_0_15px_rgba(182,255,46,0.4)]
+                    hover:brightness-110 
+                    hover:scale-105
                     active:scale-95
-                    transition-all duration-200
+                    cursor-pointer
+                    transition-all duration-300
                   "
+                  aria-label="Comprar Jogo"
                 >
-                   <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6"
-              >
-                <path d="M2 3h2l3.6 7.59-1.35 2.44A2 2 0 008 16h12v-2H8.42a.25.25 0 01-.22-.37L9.1 12h7.45a2 2 0 001.8-1.1l3.58-6.49A1 1 0 0021 3H5.21l-.94-2H2z" />
-                <circle cx="10.5" cy="18.5" r="1.5" />
-                <circle cx="17.5" cy="18.5" r="1.5" />
-              </svg>
-
-              {getStoreLabel(store.platform)}
+                  <ShoppingCart size={24} strokeWidth={2.5} />
                 </a>
-                  ))}
-                </div>
-              ) : null}
+              </div>
+            )}
 
             {game.platforms && game.platforms.length > 0 && (
               <div className="flex flex-wrap gap-4 mt-6">
@@ -467,6 +475,62 @@ export function GameDetail() {
           </section>
         </div>
       </div>
+{/* --- MODAL DE "EM DESENVOLVIMENTO" --- */}
+{showModal && (
+        // O fundo escuro (clicar nele fecha o modal)
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in"
+          onClick={() => setShowModal(false)}
+        >
+          {/* A caixa do modal (clicar nela NÃO fecha) */}
+          <div 
+            className="bg-surface border border-white/10 rounded-2xl p-8 max-w-md w-full relative shadow-2xl animate-fade-in-up"
+            onClick={(e) => e.stopPropagation()} 
+          >
+            {/* Botão X para fechar */}
+            <button 
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-textSecondary hover:text-[#B6FF2E] transition-colors"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Conteúdo */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#B6FF2E]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <ShoppingCart className="text-[#B6FF2E] w-8 h-8" />
+              </div>
+              
+              <h3 className="text-2xl font-bold font-poppins text-white mb-2">
+                Em Desenvolvimento
+              </h3>
+              
+              <p className="text-textSecondary text-lg mb-8 leading-relaxed">
+                Este jogo ainda está sendo preparado com muito carinho pela nossa equipe e não possui data prevista de lançamento.
+              </p>
+
+              {/* BOTÃO ENTENDI - COM O NOVO ESTILO HOVER VERDE */}
+              <button
+                onClick={() => setShowModal(false)}
+                className="
+                  border border-white/30 
+                  text-white 
+                  font-medium 
+                  py-3 px-10 
+                  rounded-xl 
+                  transition-all duration-300 
+                  hover:border-[#B6FF2E] 
+                  hover:text-[#B6FF2E] 
+                  hover:bg-[#B6FF2E]/5
+                  hover:shadow-[0_0_15px_rgba(182,255,46,0.2)]
+                "
+              >
+                Entendi
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

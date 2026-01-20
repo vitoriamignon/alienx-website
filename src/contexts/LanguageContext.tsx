@@ -4,7 +4,7 @@ import ptTranslations from '../locales/pt.json';
 import enTranslations from '../locales/en.json';
 
 type Language = 'pt' | 'en';
-type Translations = typeof ptTranslations;
+type Translations = typeof ptTranslations | typeof enTranslations;
 
 interface LanguageContextType {
   language: Language;

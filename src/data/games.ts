@@ -4,11 +4,15 @@ export interface Game {
   developer: string;
   releaseDate: string;
   platforms: string[];
-  status: 'released' | 'in-development' | 'coming-soon';
+  status: 'released' | 'in-development' | 'coming-soon' | 'demo';
   description: string;
   longDescription: string;
   image: string;
   genre: string;
+  stores?: {
+    platform: 'Steam' | 'Epic' | 'PlayStation' | 'Xbox' | 'GooglePlay';
+    url: string;
+  }[];
 }
 
 export const games: Game[] = [
@@ -16,72 +20,96 @@ export const games: Game[] = [
     id: "star-bind",
     title: "Star Bind",
     developer: "Alien Games Studio",
-    releaseDate: "2023-11-15",
-    platforms: ["PC", "PlayStation 5", "Xbox Series X"],
-    status: "released",
+    releaseDate: "breve",
+    platforms: ["PC"],
+    status: "coming-soon",
     description: "",
     longDescription: "",
     image: "/assets/games/star-bind/card.png",
-    genre: "Ação/Aventura"
+    genre: "Ação/Aventura",
+    stores: [
+      {platform: 'Steam',
+      url: 'https://store.steampowered.com/app/2760830/Star_Bind/'
+      }],
   },
   {
     id: "vapor-stories",
     title: "Vapor Stories",
     developer: "Alien Games Studio",
-    releaseDate: "2024-03-22",
-    platforms: ["PC", "PlayStation 5"],
-    status: "released",
+    releaseDate: "breve",
+    platforms: ["PC"],
+    status: "in-development",
     description: "",
     longDescription: "",
     image: "/assets/games/vapor-stories/card.png",
-    genre: "Ação/Aventura"
+    genre: "Ação/Aventura",
+    stores: [
+      {platform: 'Steam',
+      url: '#'
+      }],
   },
   {
     id: "cell-wars",
     title: "Cell Wars",
     developer: "Alien Games Studio",
-    releaseDate: "2024-06-15",
-    platforms: ["PC", "Xbox Series X"],
-    status: "in-development",
+    releaseDate: "2025-09-27",
+    platforms: ["Android"],
+    status: "released",
     description: "",
     longDescription: "",
     image: "/assets/games/cell-wars/card.png",
-    genre: "Estratégia"
+    genre: "Estratégia",
+    stores: [
+      {platform: 'GooglePlay',
+      url: 'https://play.google.com/store/apps/details?id=com.AlienX.CellWars&hl=pt_BR'
+      }],
   },
   {
     id: "eco-city-planner",
     title: "Eco City Planner",
     developer: "Alien Games Studio",
-    releaseDate: "2024-09-30",
-    platforms: ["PC", "Mobile"],
-    status: "coming-soon",
+    releaseDate: "breve",
+    platforms: ["PC"],
+    status: "demo",
     description: "",
     longDescription: "",
     image: "/assets/games/eco-city-planner/card.png",
-    genre: "Simulação"
+    genre: "Simulação",
+    stores: [
+      {platform: 'Steam',
+      url: 'https://store.steampowered.com/app/3908930/Eco_City_Planner/'
+      }],
   },
   {
     id: "hero-vs-1000",
     title: "Hero vs 1000",
     developer: "Alien Games Studio",
-    releaseDate: "2024-12-10",
-    platforms: ["PC", "PlayStation 5"],
-    status: "in-development",
+    releaseDate: "2024-06-07",
+    platforms: ["PC"],
+    status: "released",
     description: "",
     longDescription: "",
     image: "/assets/games/hero-vs-1000/card.png",
-    genre: "Ação"
+    genre: "Ação",
+    stores: [
+      {platform: 'Steam',
+      url: 'https://store.steampowered.com/app/2981760/Hero_Vs_1000/'
+      }],
   },
   {
     id: "office-hero",
     title: "Office Hero",
     developer: "Alien Games Studio",
-    releaseDate: "2025-02-15",
-    platforms: ["PC", "Mobile", "Nintendo Switch"],
-    status: "coming-soon",
+    releaseDate: "breve",
+    platforms: ["PC"],
+    status: "in-development",
     description: "",
     longDescription: "",
     image: "/assets/games/office-hero/card.png",
-    genre: "Aventura"
+    genre: "Aventura",
+    stores: [
+      {platform: 'Steam',
+      url: '#'
+      }],
   }
 ];
