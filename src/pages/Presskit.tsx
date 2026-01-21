@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { games } from "../data/games";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -20,6 +19,7 @@ export default function Presskit() {
 
   const actionsRow =
     "mt-auto flex flex-col gap-2 md:flex-row md:items-center md:gap-3";
+
   const imageAspect = "aspect-[4/3] md:aspect-[16/9]";
 
   const gameTranslationKey = {
@@ -29,10 +29,15 @@ export default function Presskit() {
     "star-bind": "starBind",
     "eco-city-planner": "ecoCityPlanner",
     "vapor-stories": "vaporStories",
-    "cosmic-void": "cosmicVoid",
-    "neural-shadows": "neuralShadows",
-    "echoes-of-eternity": "echoesOfEternity",
   } as const;
+
+  // 🔹 LINKS EXTERNOS DE PRESSKIT (só colocar os jogos que tiverem)
+  const presskitLinks: Record<string, string> = {
+    "star-bind": "https://impress.games/press-kit/alienx/star-bind",
+    "eco-city-planner": "https://impress.games/press-kit/alienx/eco-city-planner",
+    "hero-vs-1000": "https://impress.games/press-kit/alienx/hero-vs-1000",
+    // se não tiver presskit externo, é só NÃO colocar aqui
+  };
 
   return (
     <div className="pt-28 md:pt-32 pb-16 md:pb-20 px-4 md:px-12">
@@ -70,11 +75,13 @@ export default function Presskit() {
               </Link>
             </div>
           </div>
+
           {/* Game Cards */}
           {games.map((game) => {
-
             const translationKey =
               gameTranslationKey[game.id as keyof typeof gameTranslationKey];
+
+            const externalPresskit = presskitLinks[game.id];
 
             return (
               <div key={game.id} className={cardBase}>
@@ -92,17 +99,27 @@ export default function Presskit() {
                 </h2>
 
                 <p className="text-sm text-textSecondary mb-6 leading-relaxed">
-                  {t.games?.[translationKey as keyof typeof t.games]?.description ??
-                    // fallback de segurança caso não haja tradução
-                    ""}
+                  {t.games?.[translationKey as keyof typeof t.games]
+                    ?.description ?? ""}
                 </p>
 
-                <Link
-                  to={`/games/${game.id}`}
-                  className={`${ctaClasses} bg-accent-green text-black hover:bg-accent-green/80 w-full md:w-auto mt-auto`}
-                >
-                  {t.presskit.viewDetails}
-                </Link>
+                {externalPresskit ? (
+                  <a
+                    href={externalPresskit}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${ctaClasses} bg-accent-green text-black hover:bg-accent-green/80 w-full md:w-auto mt-auto`}
+                  >
+                    {t.presskit.viewDetails}
+                  </a>
+                ) : (
+                  <Link
+                    to={`/games/${game.id}`}
+                    className={`${ctaClasses} bg-accent-green text-black hover:bg-accent-green/80 w-full md:w-auto mt-auto`}
+                  >
+                    {t.presskit.viewDetails}
+                  </Link>
+                )}
               </div>
             );
           })}
