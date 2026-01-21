@@ -206,38 +206,6 @@ export function GameDetail() {
     developer: t.gameDetail?.developer || 'Desenvolvedor',
     genre: t.gameDetail?.genre || 'Gênero',
     platforms: t.gameDetail?.platforms || 'Plataformas',
-    features: {
-      title: t.gameDetail?.features?.title || 'Características Principais',
-      items: t.gameDetail?.features?.items || [
-        'Mundo aberto massivo para explorar com ecossistemas únicos',
-        'Sistema de combate dinâmico e fluido',
-        'História rica com múltiplos finais',
-        'Gráficos de última geração com suporte a ray tracing'
-      ]
-    },
-    requirements: {
-      title: t.gameDetail?.requirements?.title || 'Requisitos do Sistema',
-      minimum: t.gameDetail?.requirements?.minimum || 'Mínimos',
-      recommended: t.gameDetail?.requirements?.recommended || 'Recomendados',
-      system: t.gameDetail?.systemRequirements || {
-        os: 'SO:',
-        processor: 'Processador:',
-        memory: 'Memória:',
-        graphics: 'Placa de vídeo:',
-        storage: 'Armazenamento:',
-        ssdRecommended: '(SSD recomendado)',
-        windows: 'Windows 10/11 64-bit',
-        windowsMin: 'Windows 10 64-bit',
-        processorMin: 'Intel Core i5-6600K / AMD Ryzen 5 1600',
-        processorRec: 'Intel Core i7-9700K / AMD Ryzen 7 3700X',
-        memoryMin: '12 GB de RAM',
-        memoryRec: '16 GB de RAM',
-        graphicsMin: 'NVIDIA GTX 1060 6GB / AMD RX 580 8GB',
-        graphicsRec: 'NVIDIA RTX 2070 / AMD RX 5700 XT',
-        storageMin: '50 GB de espaço disponível',
-        storageRec: '50 GB de espaço disponível'
-      }
-    },
     navigation: t.gameDetail?.navigation || {
       previous: 'Anterior',
       next: 'Próximo',
@@ -270,16 +238,6 @@ export function GameDetail() {
     }, 500);
     return () => clearTimeout(timer);
   }, [slug, t]);
-    const getStoreLabel = (platform: StoreLink['platform']) => {
-  switch (platform) {
-    case 'Steam':
-      return ' ';
-    case 'GooglePlay':
-      return 'Instalar agora';
-    default:
-      return 'Acessar loja';
-  }
-};
 
   if (loading || !game) {
     return (

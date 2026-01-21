@@ -70,21 +70,6 @@
       "description": "Sobreviva aos desafios do mundo corporativo em uma aventura de escritório.",
       "tagline": "Sobreviva à vida no escritório.",
       "longDescription": "Em um mundo onde trabalhar em escritório é uma aventura, você deve navegar pelos desafios do dia a dia corporativo enquanto desvenda mistérios e faz aliados inesperados."
-    },
-    "cosmicVoid": {
-      "description": "Uma jornada épica através do vazio cósmico, onde cada decisão molda o destino da galáxia.",
-      "tagline": "Molde o destino da galáxia.",
-      "longDescription": "Uma jornada épica através do vazio cósmico, onde cada decisão molda o destino da galáxia. Navegue por nebulosas perigosas, forme alianças com seres cósmicos e determine o futuro do universo."
-    },
-    "neuralShadows": {
-      "description": "Mergulhe na mente coletiva em um thriller cyberpunk onde realidade e ilusão se confundem.",
-      "tagline": "Confunda realidade e ilusão.",
-      "longDescription": "Mergulhe na mente coletiva em um thriller cyberpunk onde realidade e ilusão se confundem. Desvende conspirações digitais, lute contra hackers virtuais e questione sua própria sanidade neste mundo distópico."
-    },
-    "echoesOfEternity": {
-      "description": "Explore ruínas antigas e desvende mistérios que ecoam através do tempo.",
-      "tagline": "Desvende mistérios atemporais.",
-      "longDescription": "Explore ruínas antigas e desvende mistérios que ecoam através do tempo. Viaje por eras perdidas, colete artefatos poderosos e revele segredos que transcendem as barreiras do tempo."
     }
   },
   "nav": {
@@ -112,43 +97,11 @@
     "developer": "Desenvolvedor",
     "genre": "Gênero",
     "platforms": "Plataformas",
-    "systemRequirements": {
-      "os": "SO:",
-      "processor": "Processador:",
-      "memory": "Memória:",
-      "graphics": "Placa de vídeo:",
-      "storage": "Armazenamento:",
-      "ssdRecommended": "(SSD recomendado)",
-      "windows": "Windows 10/11 64-bit",
-      "windowsMin": "Windows 10 64-bit",
-      "processorMin": "Intel Core i5-6600K / AMD Ryzen 5 1600",
-      "processorRec": "Intel Core i7-9700K / AMD Ryzen 7 3700X",
-      "memoryMin": "12 GB de RAM",
-      "memoryRec": "16 GB de RAM",
-      "graphicsMin": "NVIDIA GTX 1060 6GB / AMD RX 580 8GB",
-      "graphicsRec": "NVIDIA RTX 2070 / AMD RX 5700 XT",
-      "storageMin": "50 GB de espaço disponível",
-      "storageRec": "50 GB de espaço disponível"
-    },
     "navigation": {
       "previous": "Anterior",
       "next": "Próximo",
       "viewImage": "Ver imagem",
       "viewVideo": "Ver vídeo"
-    },
-    "features": {
-      "title": "Características Principais",
-      "items": [
-        "Mundo aberto massivo para explorar com ecossistemas únicos",
-        "Sistema de combate dinâmico e fluido",
-        "História rica com múltiplos finais",
-        "Gráficos de última geração com suporte a ray tracing"
-      ]
-    },
-    "requirements": {
-      "title": "Requisitos do Sistema",
-      "minimum": "Mínimos",
-      "recommended": "Recomendados"
     },
     "media": "Mídia"
   },
@@ -164,23 +117,28 @@
       "trajectoryText": "Sediada no Rio de Janeiro e fundada em 28 de dezembro de 2016, nossa missão é clara: proporcionar a melhor experiência possível em jogos imersivos, criando personagens carismáticos e jogabilidade envolvente."
     },
     "team": {
-        "title": "NOSSO TIME",
-        "roles": {
-          "eduardo": "Programador",
-          "joao": "Artista 2D e 3D",
-          "leonidas": "Gerente e Programador",
-          "pedro": "Game Designer • Artista 2D • UI/UX",
-          "rodrigo": "Game Designer • Editor • Localizador"
-        }
+      "title": "NOSSO TIME",
+      "roles": {
+        "eduardo": "Programador",
+        "joao": "Artista 2D e 3D",
+        "leonidas": "Gerente e Programador",
+        "pedro": "Game Designer • Artista 2D • UI/UX",
+        "rodrigo": "Game Designer • Editor • Localizador"
       }
     },
-  "contact": {
-  "title": "Contato",
-  "subtitle": "Entre em contato com a equipe AlienX.",
-  "name": "Nome",
-  "email": "E-mail",
-  "message": "Mensagem",
-  "send": "Enviar"
+    "presskit": {
+      "title": "Press Kit",
+      "company": "Empresa",
+      "viewDetails": "Ver Detalhes"
+    }
+  },
+    "contact": {
+    "title": "Contato",
+    "subtitle": "Entre em contato com a equipe AlienX.",
+    "name": "Nome",
+    "email": "E-mail",
+    "message": "Mensagem",
+    "send": "Enviar"
 },
   "privacy": {
     "title": "Política de Privacidade",

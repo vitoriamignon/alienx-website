@@ -43,39 +43,33 @@
   "games": {
     "starBind": {
       "description": "A stellar adventure where you connect stars to save the galaxy on an epic journey.",
+      "tagline": "",
       "longDescription": "Face the unknown as Lazlo in this frenetic action rogue-lite. Explore endless combinations of skills and star equipment to overcome relentless confrontations. The difference lies in the 'Stars', your battle allies that grow with you: unlock permanent upgrades using stardust and refine your strategy with each survival attempt. Master. "
     },
     "vaporStories": {
       "description": "Engaging stories in a world of steam and mystery, exploring deep narratives.",
+      "tagline": "",
       "longDescription": "The world is no longer the same. In this Victorian reality, steam technology has reached an unimaginable peak, giving life to robots designed to serve. However, a miscalculation in the artificial intelligence of these machines has led to an implacable logical conclusion: for society to evolve, human interaction must be eradicated. Now, citizens are captured and isolated in an attempt by the machines to 'optimize' the world."
     },
     "cellWars": {
       "description": "Epic battles in a cellular universe, where cells fight for supremacy.",
+      "tagline": "",
       "longDescription": "Dive into the primordial struggle for existence in Cell Wars, a strategy game focused on evolution and microscopic survival. Take control of a primitive organism and manage biological battles in a fierce environment where only the fittest thrive. The core gameplay allows you to strategically build and customize your cell, adapting your genes to hunt, reproduce, and dominate the ecosystem. Overcome natural selection and secure the future of your lineage in a combat where every mutation counts."
     },
     "ecoCityPlanner": {
       "description": "Plan and build eco-friendly cities in a sustainable future.",
+      "tagline": "",
       "longDescription": "Take on the role of urban consultant in Eco City Planner, a strategic simulator that uses card mechanics for sustainable city development. On a dynamic grid, every building requires precise management: your choices directly impact energy levels, pollution, and the economy. Anticipate environmental events and balance resources in real-time to transform unexplored territories into resilient metropolises. Here, smart planning is your greatest survival tool."
     },
     "heroVs1000": {
       "description": "Face enemy hordes in epic battles against a thousand adversaries.",
+      "tagline": "",
       "longDescription": "Face an extreme survival challenge in Hero Vs 1000, an action game focused on horde combat and precision. Traverse three historical eras — Medieval, Piracy, and Modern — taking control of heroes with unique fighting styles. Your mission is clear: annihilate 1000 opponents per stage to advance. With a progression system focused on unlocking weapons and mastery achievements, the game demands quick reflexes and strategy to manage relentless crowds of simultaneous enemies."
     },
     "officeHero": {
       "description": "Survive the challenges of the corporate world in an office adventure.",
+      "tagline": "",
       "longDescription": "In a world where office work is an adventure, you must navigate the challenges of daily corporate life while unraveling mysteries and making unexpected allies."
-    },
-    "cosmicVoid": {
-      "description": "An epic journey through the cosmic void, where each decision shapes the galaxy's destiny.",
-      "longDescription": "An epic journey through the cosmic void, where each decision shapes the galaxy's destiny. Navigate dangerous nebulae, form alliances with cosmic beings, and determine the future of the universe."
-    },
-    "neuralShadows": {
-      "description": "Dive into the collective mind in a cyberpunk thriller where reality and illusion blur.",
-      "longDescription": "Dive into the collective mind in a cyberpunk thriller where reality and illusion blur. Unravel digital conspiracies, fight virtual hackers, and question your own sanity in this dystopian world."
-    },
-    "echoesOfEternity": {
-      "description": "Explore ancient ruins and unravel mysteries that echo through time.",
-      "longDescription": "Explore ancient ruins and unravel mysteries that echo through time. Travel through lost eras, collect powerful artifacts, and reveal secrets that transcend the barriers of time."
     }
   },
   "nav": {
@@ -103,43 +97,11 @@
     "developer": "Developer",
     "genre": "Genre",
     "platforms": "Platforms",
-    "systemRequirements": {
-      "os": "OS:",
-      "processor": "Processor:",
-      "memory": "Memory:",
-      "graphics": "Graphics:",
-      "storage": "Storage:",
-      "ssdRecommended": "(SSD recommended)",
-      "windows": "Windows 10/11 64-bit",
-      "windowsMin": "Windows 10 64-bit",
-      "processorMin": "Intel Core i5-6600K / AMD Ryzen 5 1600",
-      "processorRec": "Intel Core i7-9700K / AMD Ryzen 7 3700X",
-      "memoryMin": "12 GB RAM",
-      "memoryRec": "16 GB RAM",
-      "graphicsMin": "NVIDIA GTX 1060 6GB / AMD RX 580 8GB",
-      "graphicsRec": "NVIDIA RTX 2070 / AMD RX 5700 XT",
-      "storageMin": "50 GB available space",
-      "storageRec": "50 GB available space"
-    },
     "navigation": {
       "previous": "Previous",
       "next": "Next",
       "viewImage": "View image",
       "viewVideo": "View video"
-    },
-    "features": {
-      "title": "Key Features",
-      "items": [
-        "Massive open world to explore with unique ecosystems",
-        "Dynamic and fluid combat system",
-        "Rich story with multiple endings",
-        "Next-gen graphics with ray tracing support"
-      ]
-    },
-    "requirements": {
-      "title": "System Requirements",
-      "minimum": "Minimum",
-      "recommended": "Recommended"
     },
     "media": "Media"
   },
@@ -170,7 +132,7 @@
       "viewDetails": "View Details"
     }
   },
-      "contact": {
+    "contact": {
     "title": "Contact",
     "subtitle": "Get in touch with the AlienX team.",
     "name": "Name",
