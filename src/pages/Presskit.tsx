@@ -67,12 +67,14 @@ export default function Presskit() {
             </p>
 
             <div className={actionsRow}>
-              <Link
-                to="/about"
+            <a
+                href="https://impress.games/press-kit/alienx"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`${ctaClasses} bg-accent-green text-black hover:bg-accent-green/80 w-full md:w-90`}
               >
                 {t.presskit.viewDetails}
-              </Link>
+              </a>
             </div>
           </div>
 

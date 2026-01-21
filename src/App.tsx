@@ -7,11 +7,16 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Contact from "./pages/Contact";
 import { GameDetail } from "./pages/GameDetail";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
+        
+        {/* ADICIONE ESTA LINHA AQUI: */}
+        <ScrollToTop />
+
         <Routes>
           {/* Rota da Home */}
           <Route 
