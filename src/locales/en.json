@@ -8,6 +8,7 @@
       "titleHighlight": "GAMES",
       "subtitle": "Unique worlds created with passion and innovation. Each game is a different journey, an experience that challenges and enchants."
     },
+    
     "aboutSection": {
       "title": "ABOUT",
       "titleHighlight": "ALIENX",
@@ -133,13 +134,17 @@
     }
   },
     "contact": {
-    "title": "Contact",
-    "subtitle": "Get in touch with the AlienX team.",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send"
-},
+    "title": "Contact Us",
+    "description": "Fill out the form below and we will get back to you.",
+    "name": "Your name",
+    "email": "Your email",
+    "message": "Your message",
+    "sending": "Sending...",
+    "send": "Send Message",
+    "success": "✅ Message sent successfully!",
+    "error": "❌ Error sending message",
+    "connectionError": "🚨 Connection error"
+  },
   "privacy": {
     "title": "Privacy Policy",
     "introduction": {

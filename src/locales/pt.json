@@ -132,14 +132,18 @@
       "viewDetails": "Ver Detalhes"
     }
   },
-    "contact": {
-    "title": "Contato",
-    "subtitle": "Entre em contato com a equipe AlienX.",
-    "name": "Nome",
-    "email": "E-mail",
-    "message": "Mensagem",
-    "send": "Enviar"
-},
+   "contact": {
+    "title": "Entre em Contato",
+    "description": "Preencha o formulário abaixo e entraremos em contato com você.",
+    "name": "Seu nome",
+    "email": "Seu email",
+    "message": "Sua mensagem",
+    "sending": "Enviando...",
+    "send": "Enviar Mensagem",
+    "success": "✅ Mensagem enviada com sucesso!",
+    "error": "❌ Erro ao enviar",
+    "connectionError": "🚨 Erro de conexão"
+  },
   "privacy": {
     "title": "Política de Privacidade",
     "introduction": {
