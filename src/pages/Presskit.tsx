@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { games } from "../data/games";
 import { useLanguage } from "../contexts/LanguageContext";
-import logoAlienx from "../assets/logo-alienx.png";
+import logoAlienx from "../assets/logo-alienx.avif";
 
 export default function Presskit() {
   const { t } = useLanguage();

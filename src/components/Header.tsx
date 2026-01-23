@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
-import logoAlienx from "../assets/logo-alienx.png";
+import logoAlienx from "../assets/logo-alienx.avif";
 import SocialIcons from "./SocialIcons";
 
 export default function Header() {

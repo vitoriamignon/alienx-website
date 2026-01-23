@@ -25,7 +25,7 @@ export const games: Game[] = [
     status: "coming-soon",
     description: "",
     longDescription: "",
-    image: "/assets/games/star-bind/card.png",
+    image: "/assets/games/star-bind/card.avif",
     genre: "action-adventure",
     stores: [
       {platform: 'Steam',
@@ -41,7 +41,7 @@ export const games: Game[] = [
     status: "in-development",
     description: "",
     longDescription: "",
-    image: "/assets/games/vapor-stories/card.png",
+    image: "/assets/games/vapor-stories/card.avif",
     genre: "action-adventure",
     stores: [
       {platform: 'Steam',
@@ -57,7 +57,7 @@ export const games: Game[] = [
     status: "released",
     description: "",
     longDescription: "",
-    image: "/assets/games/cell-wars/card.png",
+    image: "/assets/games/cell-wars/card.avif",
     genre: "strategy",
     stores: [
       {platform: 'GooglePlay',
@@ -73,7 +73,7 @@ export const games: Game[] = [
     status: "demo",
     description: "",
     longDescription: "",
-    image: "/assets/games/eco-city-planner/card.png",
+    image: "/assets/games/eco-city-planner/card.avif",
     genre: "simulation",
     stores: [
       {platform: 'Steam',
@@ -89,7 +89,7 @@ export const games: Game[] = [
     status: "released",
     description: "",
     longDescription: "",
-    image: "/assets/games/hero-vs-1000/card.png",
+    image: "/assets/games/hero-vs-1000/card.avif",
     genre: "action",
     stores: [
       {platform: 'Steam',
@@ -105,7 +105,7 @@ export const games: Game[] = [
     status: "in-development",
     description: "",
     longDescription: "",
-    image: "/assets/games/office-hero/card.png",
+    image: "/assets/games/office-hero/card.avif",
     genre: "adventure",
     stores: [
       {platform: 'Steam',

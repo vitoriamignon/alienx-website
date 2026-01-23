@@ -45,12 +45,12 @@ function getGameData(slug: string): GameData | null {
           }
       ],
       gallery: [
-        { type: 'video', url: '/assets/games/star-bind/gallery/video.mp4', thumbnail: '/assets/games/star-bind/gallery/img1.jpg' },
-        { type: 'image', url: '/assets/games/star-bind/gallery/img1.jpg' },
-        { type: 'image', url: '/assets/games/star-bind/gallery/img2.jpg' },
-        { type: 'image', url: '/assets/games/star-bind/gallery/img3.jpg' },
-        { type: 'image', url: '/assets/games/star-bind/gallery/img4.jpg' },
-        { type: 'image', url: '/assets/games/star-bind/gallery/img5.jpg' },
+        { type: 'video', url: '/assets/games/star-bind/gallery/video.mp4', thumbnail: '/assets/games/star-bind/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img2.avif' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img3.avif' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img4.avif' },
+        { type: 'image', url: '/assets/games/star-bind/gallery/img5.avif' },
       ],
     },
     'vapor-stories': {
@@ -63,11 +63,11 @@ function getGameData(slug: string): GameData | null {
           }
       ],
       gallery: [
-        { type: 'video', url: '/assets/games/vapor-stories/gallery/video.mp4', thumbnail: '/assets/games/vapor-stories/gallery/img1.png' },
-        { type: 'image', url: '/assets/games/vapor-stories/gallery/img1.png' },
-        { type: 'image', url: '/assets/games/vapor-stories/gallery/img2.png' },
-        { type: 'image', url: '/assets/games/vapor-stories/gallery/img3.png' },
-        { type: 'image', url: '/assets/games/vapor-stories/gallery/img4.png' }
+        { type: 'video', url: '/assets/games/vapor-stories/gallery/video.mp4', thumbnail: '/assets/games/vapor-stories/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/vapor-stories/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/vapor-stories/gallery/img2.avif' },
+        { type: 'image', url: '/assets/games/vapor-stories/gallery/img3.avif' },
+        { type: 'image', url: '/assets/games/vapor-stories/gallery/img4.avif' }
       ]
     },
     'cell-wars': {
@@ -80,12 +80,12 @@ function getGameData(slug: string): GameData | null {
         }
       ],
       gallery: [
-        { type: 'video', url: '/assets/games/cell-wars/gallery/video.mp4', thumbnail: '/assets/games/cell-wars/gallery/img1.png' },
-        { type: 'image', url: '/assets/games/cell-wars/gallery/img1.png' },
-        { type: 'image', url: '/assets/games/cell-wars/gallery/img2.png' },
-        { type: 'image', url: '/assets/games/cell-wars/gallery/img3.png' },
-        { type: 'image', url: '/assets/games/cell-wars/gallery/img4.png' },
-        { type: 'image', url: '/assets/games/cell-wars/gallery/img5.png' }
+        { type: 'video', url: '/assets/games/cell-wars/gallery/video.mp4', thumbnail: '/assets/games/cell-wars/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img2.avif' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img3.avif' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img4.avif' },
+        { type: 'image', url: '/assets/games/cell-wars/gallery/img5.avif' }
       ]
     },
     'eco-city-planner': {
@@ -98,13 +98,13 @@ function getGameData(slug: string): GameData | null {
         }
      ],
       gallery: [
-        { type: 'video', url: '/assets/games/eco-city-planner/gallery/video.mp4', thumbnail: '/assets/games/eco-city-planner/gallery/img1.jpg' },
-        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img1.jpg' },
-        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img2.jpg' },
-        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img3.jpg' },
-        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img4.jpg' },
-        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img5.jpg' },
-        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img6.jpg' }
+        { type: 'video', url: '/assets/games/eco-city-planner/gallery/video.mp4', thumbnail: '/assets/games/eco-city-planner/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img2.avif' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img3.avif' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img4.avif' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img5.avif' },
+        { type: 'image', url: '/assets/games/eco-city-planner/gallery/img6.avif' }
       ]
       
     },
@@ -118,17 +118,15 @@ function getGameData(slug: string): GameData | null {
         }
      ],
       gallery: [
-        { type: 'video', url: '/assets/games/hero-vs-1000/gallery/video.mp4', thumbnail: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img1.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img2.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img3.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img4.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img5.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img6.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img7.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img8.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img9.jpg' },
-        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img10.jpg' }
+        { type: 'video', url: '/assets/games/hero-vs-1000/gallery/video.mp4', thumbnail: '/assets/games/hero-vs-1000/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img2.avif' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img3.avif' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img4.avif' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img5.avif' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img6.avif' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img7.avif' },
+        { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img8.avif' }
       ]
     },
     'office-hero': {
@@ -141,17 +139,11 @@ function getGameData(slug: string): GameData | null {
         }
     ],
       gallery: [
-        { type: 'video', url: '/assets/games/office-hero/gallery/video.mp4', thumbnail: '/assets/games/office-hero/gallery/img1.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img1.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img2.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img3.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img4.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img5.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img6.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img7.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img8.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img9.jpg' },
-        { type: 'image', url: '/assets/games/office-hero/gallery/img10.jpg' }
+        { type: 'video', url: '/assets/games/office-hero/gallery/video.mp4', thumbnail: '/assets/games/office-hero/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img1.avif' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img2.avif' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img3.avif' },
+        { type: 'image', url: '/assets/games/office-hero/gallery/img4.avif' }
       ]
     }
   };

@@ -8,7 +8,7 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 
 import { useLanguage } from "../contexts/LanguageContext";
-import logoAlienx from "../assets/logo-alienx.png";
+import logoAlienx from "../assets/logo-alienx.avif";
 import { games } from '../data/games'; 
 
 export default function Footer() {
