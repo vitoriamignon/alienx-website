@@ -68,7 +68,7 @@ export default function Footer() {
           {/* COLUNA 3: PÁGINAS */}
           <div>
             <h3 className="text-textPrimary font-bold mb-4 uppercase">
-              PÁGINAS
+              {t.footer.pages || "PÁGINAS"}
             </h3>
             <ul className="space-y-2 text-sm text-textSecondary">
               <li>
@@ -112,7 +112,7 @@ export default function Footer() {
         {/* --- ÍCONES SOCIAIS --- */}
         <div className="flex flex-col items-center justify-center mb-8">
           <h4 className="text-white font-bold mb-4 text-sm tracking-wider">
-            Siga-nos
+            {t.footer.followUs || "Siga-nos"}
           </h4>
           
           <div className="flex items-center gap-6">
