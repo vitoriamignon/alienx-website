@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { games } from '../data/games';
 import { useLanguage } from '../contexts/LanguageContext';
+import { translateGenre } from '../lib/utils';
 import { ShoppingCart, X } from "lucide-react";
 
 interface StoreLink {
@@ -36,7 +37,7 @@ function getGameData(slug: string): GameData | null {
   const gameDetails: Record<string, Omit<GameData, 'id' | 'title' | 'image' | 'status' | 'platforms' | 'releaseDate' | 'longDescription'>> = {
     'star-bind': {
       developer: 'Alien Games Studio',
-      genre: 'Ação/Aventura',
+      genre: 'action-adventure',
       description: 'Uma aventura espacial épica em um universo aberto',
         stores: [
           {platform: 'Steam',
@@ -54,7 +55,7 @@ function getGameData(slug: string): GameData | null {
     },
     'vapor-stories': {
       developer: 'Alien Games Studio',
-      genre: 'Ação/Aventura',
+      genre: 'action-adventure',
       description: 'Uma história de mistério e aventura em um mundo steampunk',
         stores: [
           {platform: 'Steam',
@@ -71,7 +72,7 @@ function getGameData(slug: string): GameData | null {
     },
     'cell-wars': {
       developer: 'Alien Games Studio',
-      genre: 'Estratégia',
+      genre: 'strategy',
       description: 'Construa, lute e domine em um mundo microscópico',
        stores: [
         {platform: 'GooglePlay',
@@ -89,7 +90,7 @@ function getGameData(slug: string): GameData | null {
     },
     'eco-city-planner': {
       developer: 'Alien Games Studio',
-      genre: 'Simulação',
+      genre: 'simulation',
       description: 'Construa a cidade sustentável do futuro',
        stores: [
         {platform: 'Steam',
@@ -109,7 +110,7 @@ function getGameData(slug: string): GameData | null {
     },
     'hero-vs-1000': {
       developer: 'Alien Games Studio',
-      genre: 'Ação',
+      genre: 'action',
       description: 'Um herói contra milhares de inimigos',
       stores: [
         {platform: 'Steam',
@@ -132,7 +133,7 @@ function getGameData(slug: string): GameData | null {
     },
     'office-hero': {
       developer: 'Alien Games Studio',
-      genre: 'Aventura',
+      genre: 'adventure',
       description: 'A rotina do escritório nunca foi tão heroica',
       stores: [
         {platform: 'Steam',
@@ -274,7 +275,7 @@ export function GameDetail() {
                   : translations.status.demo}
               </span>
               <span className="text-textSecondary">•</span>
-              <span className="text-textSecondary">{game.genre}</span>
+              <span className="text-textSecondary">{translateGenre(game.genre, t)}</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4 font-poppins">{game.title}</h1>

@@ -145,6 +145,16 @@
     "error": "❌ Error sending message",
     "connectionError": "🚨 Connection error"
   },
+  "genres": {
+    "action": "Action",
+    "adventure": "Adventure",
+    "strategy": "Strategy",
+    "simulation": "Simulation",
+    "action-adventure": "Action/Adventure",
+    "rpg": "RPG",
+    "puzzle": "Puzzle",
+    "platformer": "Platformer"
+  },
   "privacy": {
     "title": "Privacy Policy",
     "introduction": {

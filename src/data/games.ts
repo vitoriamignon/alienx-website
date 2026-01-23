@@ -26,7 +26,7 @@ export const games: Game[] = [
     description: "",
     longDescription: "",
     image: "/assets/games/star-bind/card.png",
-    genre: "Ação/Aventura",
+    genre: "action-adventure",
     stores: [
       {platform: 'Steam',
       url: 'https://store.steampowered.com/app/2760830/Star_Bind/'
@@ -42,7 +42,7 @@ export const games: Game[] = [
     description: "",
     longDescription: "",
     image: "/assets/games/vapor-stories/card.png",
-    genre: "Ação/Aventura",
+    genre: "action-adventure",
     stores: [
       {platform: 'Steam',
       url: '#'
@@ -58,7 +58,7 @@ export const games: Game[] = [
     description: "",
     longDescription: "",
     image: "/assets/games/cell-wars/card.png",
-    genre: "Estratégia",
+    genre: "strategy",
     stores: [
       {platform: 'GooglePlay',
       url: 'https://play.google.com/store/apps/details?id=com.AlienX.CellWars&hl=pt_BR'
@@ -74,7 +74,7 @@ export const games: Game[] = [
     description: "",
     longDescription: "",
     image: "/assets/games/eco-city-planner/card.png",
-    genre: "Simulação",
+    genre: "simulation",
     stores: [
       {platform: 'Steam',
       url: 'https://store.steampowered.com/app/3908930/Eco_City_Planner/'
@@ -90,7 +90,7 @@ export const games: Game[] = [
     description: "",
     longDescription: "",
     image: "/assets/games/hero-vs-1000/card.png",
-    genre: "Ação",
+    genre: "action",
     stores: [
       {platform: 'Steam',
       url: 'https://store.steampowered.com/app/2981760/Hero_Vs_1000/'
@@ -106,7 +106,7 @@ export const games: Game[] = [
     description: "",
     longDescription: "",
     image: "/assets/games/office-hero/card.png",
-    genre: "Aventura",
+    genre: "adventure",
     stores: [
       {platform: 'Steam',
       url: '#'

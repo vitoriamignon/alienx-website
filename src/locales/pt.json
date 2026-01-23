@@ -144,6 +144,16 @@
     "error": "❌ Erro ao enviar",
     "connectionError": "🚨 Erro de conexão"
   },
+  "genres": {
+    "action": "Ação",
+    "adventure": "Aventura",
+    "strategy": "Estratégia",
+    "simulation": "Simulação",
+    "action-adventure": "Ação/Aventura",
+    "rpg": "RPG",
+    "puzzle": "Quebra-cabeça",
+    "platformer": "Plataforma"
+  },
   "privacy": {
     "title": "Política de Privacidade",
     "introduction": {
