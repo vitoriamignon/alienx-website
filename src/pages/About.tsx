@@ -47,7 +47,7 @@ export default function About() {
           <div className="max-w-6xl mx-auto mb-20 animate-fade-in">
             <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl">
               <img 
-                src="/assets/team/Equipe.jpg" 
+                src="/assets/team/Equipe.avif" 
                 alt="Equipe AlienX" 
                 className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition duration-700"
               />
