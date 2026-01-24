@@ -44,7 +44,7 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost/contact-api.php", {
+      const response = await fetch("http://localhost/send-contact.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
