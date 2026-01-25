@@ -1,21 +1,32 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
+
+// Headers de CORS
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=UTF-8');
 
+// Tratamento do Preflight
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
 
-// Receber dados do formulário
-$data = json_decode(file_get_contents('php://input'), true);
+// Receber dados
+$input = file_get_contents('php://input');
+$data = json_decode($input, true);
 
-// Validar dados
-$name = filter_var($data['name'] ?? '', FILTER_SANITIZE_STRING);
+if (!$data) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Nenhum dado recebido ou JSON inválido']);
+    exit();
+}
+
+$name = htmlspecialchars($data['name'] ?? '', ENT_QUOTES, 'UTF-8');
 $email = filter_var($data['email'] ?? '', FILTER_VALIDATE_EMAIL);
-$message = filter_var($data['message'] ?? '', FILTER_SANITIZE_STRING);
+$message = htmlspecialchars($data['message'] ?? '', ENT_QUOTES, 'UTF-8');
 
 if (!$name || !$email || !$message) {
     http_response_code(400);
@@ -23,22 +34,26 @@ if (!$name || !$email || !$message) {
     exit();
 }
 
-// Configurar email
-$to = "contact@alienphalanx.com";
+// Configuração do E-mail
+$to = "mirynhalopes@gmail.com"; 
 $subject = "Novo contato do site - $name";
+
 $body = "Nome: $name\n";
 $body .= "Email: $email\n";
 $body .= "Mensagem:\n$message\n";
 
-$headers = "From: $email\r\n";
-$headers .= "Reply-To: $email\r\n";
+// Headers
+// Importante: No XAMPP/Gmail, o 'From' deve ser igual ao autenticado ou omitido (o sendmail.ini força)
+$headers = "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
-// Enviar email
+// Enviar
 if (mail($to, $subject, $body, $headers)) {
-    echo json_encode(['success' => true, 'message' => 'Email enviado com sucesso!']);
+    // Sucesso
+    echo json_encode(['success' => true, 'message' => 'Mensagem enviada com sucesso!']);
 } else {
+    // Erro do servidor de email
     http_response_code(500);
-    echo json_encode(['error' => 'Erro ao enviar email. Tente novamente.']);
+    echo json_encode(['error' => 'O servidor recebeu, mas falhou ao enviar o email via SMTP.']);
 }
 ?>
