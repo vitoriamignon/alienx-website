@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import logoAlienx from "../assets/logo-alienx.avif";
 import SocialIcons from "./SocialIcons";
+import { HashLink } from 'react-router-hash-link';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -34,6 +35,14 @@ export default function Header() {
           onClick={() => setOpen(!open)}
           aria-label="Abrir menu"
         >
+          <HashLink 
+          smooth 
+          to="/#jogos" 
+          className={navLinkClass}
+          onClick={() => setOpen(false)}
+        >
+          {t.nav.games}
+        </HashLink>
           ☰
         </button>
 
@@ -47,9 +56,13 @@ export default function Header() {
             {t.nav.about}
           </Link>
 
-          <a href="/#jogos" className={navLinkClass}>
+          <HashLink 
+            smooth 
+            to="/#jogos" 
+            className={navLinkClass}
+          >
             {t.nav.games}
-          </a>
+          </HashLink>
 
           <Link 
             to="/presskit" 
