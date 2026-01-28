@@ -35,7 +35,7 @@ if (!$name || !$email || !$message) {
 }
 
 // Configuração do E-mail
-$to = "mirynhalopes@gmail.com"; 
+$to = "contact@alienphalanx.com"; 
 $subject = "Novo contato do site - $name";
 
 $body = "Nome: $name\n";
