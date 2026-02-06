@@ -37,7 +37,7 @@ export default function Footer() {
 
             {/* ENDEREÇO + EMAIL (Texto simples) */}
             <div className="text-textSecondary text-sm leading-relaxed space-y-1 border-t border-white/10 pt-4 max-w-xs">
-              <p className="font-bold text-white mb-2">Endereço</p>
+              <p className="font-bold text-white mb-2">{t.footer.address}</p>
               <p>21911-130</p>
               <p>Rio de Janeiro, Rio de Janeiro, BR</p>
               <p className="mt-2">
@@ -103,6 +103,15 @@ export default function Footer() {
                   className="hover:text-accent-green transition-colors"
                 >
                   {t.footer.contact}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/desenvolvedores"
+                  className="hover:text-accent-green transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  {t.footer.developers}
                 </Link>
               </li>
             </ul>

@@ -29,8 +29,10 @@
     "careers": "Careers",
     "pressKit": "Press Kit",
     "contact": "Contact",
+    "developers": "Development Team",
     "pages": "PAGES",
     "followUs": "Follow Us",
+    "address": "Address",
     "copyright": " AlienX. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use"
@@ -156,6 +158,10 @@
     "rpg": "RPG",
     "puzzle": "Puzzle",
     "platformer": "Platformer"
+  },
+  "desenvolvedores": {
+    "title": "OUR DEVELOPMENT TEAM",
+    "description": "Meet the development team that transforms ideas into unforgettable digital experiences."
   },
   "privacy": {
     "title": "Privacy Policy",

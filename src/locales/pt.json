@@ -28,8 +28,10 @@
     "careers": "Carreiras",
     "pressKit": "Press Kit",
     "contact": "Contato",
+    "developers": "Time de desenvolvimento",
     "pages": "PÁGINAS",
     "followUs": "Siga-nos",
+    "address": "Endereço",
     "copyright": " AlienX. Todos os direitos reservados.",
     "privacy": "Política de Privacidade",
     "terms": "Termos de Uso"
@@ -155,6 +157,10 @@
     "rpg": "RPG",
     "puzzle": "Quebra-cabeça",
     "platformer": "Plataforma"
+  },
+  "desenvolvedores": {
+    "title": "NOSSO TIME DE DESENVOLVIMENTO",
+    "description": "Conheça o time de desenvolvimento que transforma ideias em experiências digitais inesquecíveis."
   },
   "privacy": {
     "title": "Política de Privacidade",

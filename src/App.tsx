@@ -7,6 +7,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Contact from "./pages/Contact";
 import { GameDetail } from "./pages/GameDetail";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Desenvolvedores from "./pages/Desenvolvedores";
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -53,6 +54,14 @@ function App() {
             element={
               <MainLayout>
                 <PrivacyPolicy />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/desenvolvedores"
+            element={
+              <MainLayout>
+                <Desenvolvedores />
               </MainLayout>
             }
           />

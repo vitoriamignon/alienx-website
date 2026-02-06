@@ -2,9 +2,9 @@ import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
 import ptTranslations from '../locales/pt.json';
 import enTranslations from '../locales/en.json';
+import type { Translations } from '../lib/types';
 
 type Language = 'pt' | 'en';
-type Translations = typeof ptTranslations | typeof enTranslations;
 
 interface LanguageContextType {
   language: Language;
