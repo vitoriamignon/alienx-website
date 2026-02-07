@@ -30,7 +30,13 @@ function App() {
           />
 
           {/* Rota Sobre*/}
-          <Route path="/about" element={<About />} />
+          <Route path="/about"
+           element={
+            <MainLayout>
+             <About />
+            </MainLayout>
+             }
+              />
 
              {/* Rota  Presskit */}
           <Route 

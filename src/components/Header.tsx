@@ -35,14 +35,6 @@ export default function Header() {
           onClick={() => setOpen(!open)}
           aria-label="Abrir menu"
         >
-          <HashLink 
-          smooth 
-          to="/#jogos" 
-          className={navLinkClass}
-          onClick={() => setOpen(false)}
-        >
-          {t.nav.games}
-        </HashLink>
           ☰
         </button>
 
