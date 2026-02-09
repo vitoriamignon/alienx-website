@@ -209,16 +209,29 @@ export function GameDetail() {
     loading: t.loading || 'Carregando...'
   };
 
-  const formatDate = (dateString: string) => {
-    const options: Intl.DateTimeFormatOptions = { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric', 
-      timeZone: 'UTC' 
-    };
-    const language = localStorage.getItem('language') || 'pt';
-    return new Date(dateString).toLocaleDateString(language === 'pt' ? 'pt-BR' : 'en-US', options);
+const formatDate = (dateString?: string) => {
+  if (!dateString) return translations.status.comingSoon;
+
+  const parsedDate = new Date(dateString);
+
+  if (isNaN(parsedDate.getTime())) {
+    return translations.status.comingSoon;
+  }
+
+  const options: Intl.DateTimeFormatOptions = { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric',
+    timeZone: 'UTC'
   };
+
+  const language = localStorage.getItem('language') || 'pt';
+
+  return parsedDate.toLocaleDateString(
+    language === 'pt' ? 'pt-BR' : 'en-US',
+    options
+  );
+};
 
   useEffect(() => {
     const timer = setTimeout(() => {
