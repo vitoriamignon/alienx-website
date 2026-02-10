@@ -45,7 +45,7 @@ function getGameData(slug: string): GameData | null {
           }
       ],
       gallery: [
-        { type: 'video', url: '/assets/games/star-bind/gallery/video.mp4', thumbnail: '/assets/games/star-bind/gallery/img1.avif' },
+        { type: 'video', url: 'https://www.youtube.com/embed/_Jq_o6uE-Dc', thumbnail: '/assets/games/star-bind/card.avif' },
         { type: 'image', url: '/assets/games/star-bind/gallery/img1.avif' },
         { type: 'image', url: '/assets/games/star-bind/gallery/img2.avif' },
         { type: 'image', url: '/assets/games/star-bind/gallery/img3.avif' },
@@ -63,7 +63,7 @@ function getGameData(slug: string): GameData | null {
           }
       ],
       gallery: [
-        { type: 'video', url: '/assets/games/vapor-stories/gallery/video.mp4', thumbnail: '/assets/games/vapor-stories/gallery/img1.avif' },
+        // { type: 'video', url: '/assets/games/vapor-stories/gallery/video.mp4', thumbnail: '/assets/games/vapor-stories/card.avif' },
         { type: 'image', url: '/assets/games/vapor-stories/gallery/img1.avif' },
         { type: 'image', url: '/assets/games/vapor-stories/gallery/img2.avif' },
         { type: 'image', url: '/assets/games/vapor-stories/gallery/img3.avif' },
@@ -80,7 +80,7 @@ function getGameData(slug: string): GameData | null {
         }
       ],
       gallery: [
-        { type: 'video', url: '/assets/games/cell-wars/gallery/video.mp4', thumbnail: '/assets/games/cell-wars/gallery/img1.avif' },
+        // { type: 'video', url: '/assets/games/cell-wars/gallery/video.mp4', thumbnail: '/assets/games/cell-wars/card.avif' },
         { type: 'image', url: '/assets/games/cell-wars/gallery/img1.avif' },
         { type: 'image', url: '/assets/games/cell-wars/gallery/img2.avif' },
         { type: 'image', url: '/assets/games/cell-wars/gallery/img3.avif' },
@@ -98,7 +98,7 @@ function getGameData(slug: string): GameData | null {
         }
      ],
       gallery: [
-        { type: 'video', url: '/assets/games/eco-city-planner/gallery/video.mp4', thumbnail: '/assets/games/eco-city-planner/gallery/img1.avif' },
+        { type: 'video', url: 'https://www.youtube.com/embed/OcvLy39_Za0', thumbnail: '/assets/games/eco-city-planner/card.avif' },
         { type: 'image', url: '/assets/games/eco-city-planner/gallery/img1.avif' },
         { type: 'image', url: '/assets/games/eco-city-planner/gallery/img2.avif' },
         { type: 'image', url: '/assets/games/eco-city-planner/gallery/img3.avif' },
@@ -118,7 +118,7 @@ function getGameData(slug: string): GameData | null {
         }
      ],
       gallery: [
-        { type: 'video', url: '/assets/games/hero-vs-1000/gallery/video.mp4', thumbnail: '/assets/games/hero-vs-1000/gallery/img1.avif' },
+        // { type: 'video', url: '/assets/games/hero-vs-1000/gallery/video.mp4', thumbnail: '/assets/games/hero-vs-1000/card.avif' },
         { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img1.avif' },
         { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img2.avif' },
         { type: 'image', url: '/assets/games/hero-vs-1000/gallery/img3.avif' },
@@ -139,7 +139,7 @@ function getGameData(slug: string): GameData | null {
         }
     ],
       gallery: [
-        { type: 'video', url: '/assets/games/office-hero/gallery/video.mp4', thumbnail: '/assets/games/office-hero/gallery/img1.avif' },
+        // { type: 'video', url: '/assets/games/office-hero/gallery/video.mp4', thumbnail: '/assets/games/office-hero/card.avif' },
         { type: 'image', url: '/assets/games/office-hero/gallery/img1.avif' },
         { type: 'image', url: '/assets/games/office-hero/gallery/img2.avif' },
         { type: 'image', url: '/assets/games/office-hero/gallery/img3.avif' },
@@ -358,13 +358,13 @@ const formatDate = (dateString?: string) => {
             {/* Visualização principal da mídia */}
             <div className="relative w-full h-64 md:h-96 bg-black/5 dark:bg-white/5 rounded-lg overflow-hidden mb-4">
               {game.gallery[selectedImage]?.type === 'video' ? (
-                <video 
+                <iframe 
                   src={game.gallery[selectedImage].url} 
-                  className="w-full h-full object-contain" 
-                  controls
-                  autoPlay
-                  muted
-                  loop
+                  title="Game trailer"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
               ) : (
                 <img 
@@ -414,7 +414,7 @@ const formatDate = (dateString?: string) => {
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-md overflow-hidden transition-all duration-200 ${
+                  className={`relative flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-md overflow-hidden transition-all duration-200 ${
                     selectedImage === index
                       ? 'ring-2 ring-accent-green transform scale-105'
                       : 'opacity-70 hover:opacity-100 ring-1 ring-textPrimary/20'
